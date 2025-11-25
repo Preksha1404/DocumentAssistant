@@ -1,6 +1,11 @@
-def main():
-    print("Hello from documentassistant!")
+from fastapi import FastAPI
+from app.core.database import Base, engine
 
+app = FastAPI()
 
-if __name__ == "__main__":
-    main()
+# Create all database tables
+Base.metadata.create_all(bind=engine)
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello World!"}
