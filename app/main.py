@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.core.database import Base, engine
-from app.api import auth
+from app.api import auth, document
 
 app = FastAPI()
 
@@ -8,3 +8,4 @@ app = FastAPI()
 Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router)
+app.include_router(document.router)

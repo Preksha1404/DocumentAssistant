@@ -19,3 +19,8 @@ PyJWT
 # Additional Types
 pydantic-extra-types
 phonenumbers==9.0.17
+
+# Document Processing
+pdfplumber
+python-docx
+PyMuPDF
