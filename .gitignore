@@ -13,3 +13,5 @@ wheels/
 .env
 
 /documents
+
+/chroma_data

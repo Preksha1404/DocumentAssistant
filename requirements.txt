@@ -24,3 +24,9 @@ phonenumbers==9.0.17
 pdfplumber
 python-docx
 PyMuPDF
+
+# AI Integrations
+langchain
+langchain_text_splitters
+sentence-transformers
+chromadb

@@ -4,6 +4,8 @@ import pdfplumber
 import unicodedata
 from docx import Document
 from fastapi import UploadFile
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from sentence_transformers import SentenceTransformer
 
 async def extract_text_from_file(file: UploadFile) -> str:
     filename = file.filename.lower()
@@ -72,3 +74,17 @@ def preprocess_text(text: str) -> str:
 
     # Final strip
     return text.strip()
+
+def chunk_text(text: str, chunk_size: int = 500, chunk_overlap: int = 100):
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap
+    )
+    return splitter.split_text(text)
+
+# Embedding using Sentence Transformers
+embedding_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+def embed_chunks(chunks: list[str]):
+    embeddings = embedding_model.encode(chunks, convert_to_numpy=True)
+    return embeddings.tolist()  # convert NumPy to list for JSON
