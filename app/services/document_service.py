@@ -79,13 +79,13 @@ def preprocess_text(text: str) -> str:
 # HUGGINGFACE EMBEDDING FOR SEMANTIC CHUNKER
 def get_langchain_embeddings():
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-mpnet-base-v2"
+        model_name="pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb"
     )
 
 langchain_embeddings = get_langchain_embeddings()
 
 # HYBRID CHUNKING (Semantic → Fallback Recursive)
-def chunk_text(text: str, chunk_size: int = 500, chunk_overlap: int = 100):
+def chunk_text(text: str, chunk_size: int = 512, chunk_overlap: int = 100):
 
     # Semantic Chunker
     semantic_splitter = SemanticChunker(langchain_embeddings)
@@ -108,7 +108,7 @@ def chunk_text(text: str, chunk_size: int = 500, chunk_overlap: int = 100):
     return final_chunks
 
 # EMBEDDING USING SENTENCE TRANSFORMERS
-embedding_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
+embedding_model = SentenceTransformer("pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb")
 
 def embed_chunks(chunks: list[str]):
     vectors = embedding_model.encode(

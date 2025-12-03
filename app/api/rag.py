@@ -9,7 +9,7 @@ from app.utils.auth_dependencies import get_current_user
 # Upload → Extract → Preprocess → Chunk → Embed → Store → (User asks) → Query Embed → Retrieve → Build Prompt → Gemini → Response
 
 # Load embedding model once
-embedding_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
+embedding_model = SentenceTransformer("pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb")
 
 # Gemini Model
 gemini_model = GenerativeModel("gemini-2.5-flash")
@@ -76,15 +76,27 @@ async def ask_rag(payload: AskRequest, current_user: User = Depends(get_current_
         )
 
     final_prompt = f"""
-    You are a RAG assistant. 
-    Answer the question **using ONLY the document snippets provided below**.
-    If the answer is not present in the snippets, respond with: "Not available in the document."
+    You are a Retrieval-Augmented Generation (RAG) assistant.
 
+    Use the document snippets BELOW to answer the user’s question.  
+    You are allowed to *combine information across snippets* and *infer meaning*  
+    as long as your answer is directly supported by the content.
+
+    Rules:
+    - If the answer is clearly supported anywhere in the snippets, answer normally.
+    - If information is spread across multiple bullets or paragraphs, combine them.
+    - If the exact wording isn't present but the meaning is present, answer.
+    - Only if NONE of the snippets contain relevant information, reply: 
+    "Not available in the document."
+
+    SNIPPETS:
     {snippets}
 
     User Question: {question}
 
-    Provide a clear answer and list the snippet IDs used.
+    Provide:
+    1. The best possible answer based on the snippets.
+    2. The snippet IDs you used.
     """
 
     # STEP 4: Call Gemini 2.5 Flash

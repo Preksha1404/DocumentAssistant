@@ -4,6 +4,7 @@ from app.models.users import User
 from app.utils.auth_dependencies import get_current_user
 from app.services.document_service import extract_text_from_file, chunk_text, embed_chunks
 from app.utils.vector_store import get_or_create_collection
+from sentence_transformers import util
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
@@ -30,9 +31,16 @@ async def upload_document(
 
         # Chunk text
         chunks = chunk_text(text_content)
+        # for i, ch in enumerate(chunks):
+        #     print(f"\n===== CHUNK {i+1} (len={len(ch)}) =====")
+        #     print(ch)
 
         # Create embeddings
         embeddings = embed_chunks(chunks)
+
+        # for i in range(len(chunks)-1):
+        #     sim = util.cos_sim(embeddings[i], embeddings[i+1])
+        #     print(i, float(sim))
 
         # Store in vector DB (ChromaDB)
         collection = get_or_create_collection("physio_docs")
