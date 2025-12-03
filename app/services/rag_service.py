@@ -25,12 +25,12 @@ def run_rag_query(question: str, k: int = 5):
     snippets = ""
     
     for i in range(len(documents)):
-        snippets += f"""
-                    === SNIPPET {i+1} ===
-                    ID: {ids[i]}
-                    FILE: {metadatas[i].get("filename", "unknown")}
-                    CONTENT: {documents[i]}
-                    """
+        snippets += (
+            f"\n=== SNIPPET {i+1} ===\n"
+            f"ID: {ids[i]}\n"
+            f"FILE: {metadatas[i].get('filename', 'unknown')}\n"
+            f"CONTENT: {documents[i]}\n"
+        )
         
     final_prompt = f"""
     You are a Retrieval-Augmented Generation (RAG) assistant.
