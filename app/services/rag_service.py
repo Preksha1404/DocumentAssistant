@@ -33,28 +33,40 @@ def run_rag_query(question: str, k: int = 5):
         )
         
     final_prompt = f"""
-    You are a Retrieval-Augmented Generation (RAG) assistant.
+You are an intelligent Retrieval-Augmented Generation (RAG) assistant.
 
-    Use the document snippets BELOW to answer the user’s question.  
-    You are allowed to *combine information across snippets* and *infer meaning*  
-    as long as your answer is directly supported by the content.
+Use the document SNIPPETS below to answer the user's question — even if the user
+asks for:
+- titles
+- page count
+- highlights
+- key insights
+- purpose of the document
+- structure
+- metadata
+- summaries
+- recommendations
+- creative outputs based on document content
 
-    Rules:
-    - If the answer is clearly supported anywhere in the snippets, answer normally.
-    - If information is spread across multiple bullets or paragraphs, combine them.
-    - If the exact wording isn't present but the meaning is present, answer.
-    - Only if NONE of the snippets contain relevant information, reply: 
-    "Not available in the document."
+You may **infer, reason, summarize, or create suggestions** using the snippet content.
 
-    SNIPPETS:
-    {snippets}
+RULES:
+1. Always use the information and themes found in the snippets.
+2. If the answer is not explicitly written, you may INFER or CREATE it based on the document’s content.
+3. Only if the snippets are completely irrelevant to the question, reply:
+   "Not available in the document."
+4. Otherwise, ALWAYS give the best possible answer.
+5. Provide the snippet IDs used for reasoning.
 
-    User Question: {question}
+SNIPPETS:
+{snippets}
 
-    Provide:
-    1. The best possible answer based on the snippets.
-    2. The snippet IDs you used.
-    """
+User Question: {question}
+
+Respond with:
+1. Final Answer  
+2. Snippet IDs used
+"""
 
     answer = gemini_model.generate_content(final_prompt).text
 
