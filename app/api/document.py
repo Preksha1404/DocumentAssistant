@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from app.models.users import User
-from app.utils.auth_dependencies import get_current_user
+from app.utils.subscription import require_active_subscription
 from app.services.document_service import extract_text_from_file, chunk_text, embed_chunks
 from app.utils.vector_store import get_or_create_collection
 from sentence_transformers import util
@@ -19,7 +19,7 @@ router = APIRouter(prefix="/documents", tags=["Documents"])
 @router.post("/upload")
 async def upload_document(
     file: UploadFile = File(...),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_active_subscription)
     ):
 
     if not current_user:

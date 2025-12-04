@@ -34,3 +34,6 @@ google-generativeai
 langchain-community
 langchain-experimental
 langchain-huggingface
+
+# Payments
+stripe
