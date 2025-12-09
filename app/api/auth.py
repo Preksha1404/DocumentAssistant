@@ -39,7 +39,9 @@ def login(credentials: UserLogin, response: Response, db: Session = Depends(get_
 
     res = JSONResponse(content={
         "user": user_data,
-        "message": "Login successful"
+        "message": "Login successful",
+        "access_token": access,
+        "refresh_token": refresh
     })
 
     res.set_cookie("access_token", access, httponly=True, secure=True,

@@ -15,7 +15,7 @@ class User(Base):
     # Stripe fields
     stripe_customer_id = Column(String, nullable=True)
     stripe_subscription_id = Column(String, nullable=True)
-    subscription_status = Column(String, default="trialing")  # trialing, active, past_due, canceled
+    subscription_status = Column(String, nullable=True)  # trialing, active, past_due, canceled
     trial_end = Column(DateTime, nullable=True)
     current_period_end = Column(DateTime, nullable=True)
     

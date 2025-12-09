@@ -9,18 +9,29 @@ def require_active_subscription(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-
-    # Trial active
+    # ACTIVE TRIAL
     if current_user.subscription_status == "trialing":
         if current_user.trial_end and current_user.trial_end > datetime.utcnow():
-            return current_user
-    
-    # Active subscription
-    if current_user.subscription_status == "active":
-        return current_user
+            return current_user  # allow access
+        else:
+            # trial expired
+            raise HTTPException(
+                status_code=402,
+                detail="Your free trial has ended. Please subscribe to continue."
+            )
 
-    # Trial expired or subscription canceled
+    # ACTIVE SUBSCRIPTION
+    if current_user.subscription_status == "active":
+        if current_user.current_period_end and current_user.current_period_end > datetime.utcnow():
+            return current_user
+        else:
+            raise HTTPException(
+                status_code=402,
+                detail="Your subscription is expired. Renew your plan."
+            )
+
+    # EVERYTHING ELSE
     raise HTTPException(
         status_code=402,
-        detail="Your trial has ended. Please subscribe to continue using the AI assistant."
+        detail="Upgrade required to continue."
     )

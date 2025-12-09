@@ -21,7 +21,6 @@ class AuthService:
                 detail="Email already registered",
             )
         
-        # Hash password and create new customer
         hashed_password = get_pwd_hash(user.password)
         new_user = User(
             email=user.email,

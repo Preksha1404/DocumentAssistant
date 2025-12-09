@@ -56,7 +56,6 @@ RULES:
 3. Only if the snippets are completely irrelevant to the question, reply:
    "Not available in the document."
 4. Otherwise, ALWAYS give the best possible answer.
-5. Provide the snippet IDs used for reasoning.
 
 SNIPPETS:
 {snippets}
@@ -64,8 +63,8 @@ SNIPPETS:
 User Question: {question}
 
 Respond with:
-1. Final Answer  
-2. Snippet IDs used
+Answer:
+
 """
 
     answer = gemini_model.generate_content(final_prompt).text

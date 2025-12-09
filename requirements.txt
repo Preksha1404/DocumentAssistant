@@ -37,3 +37,6 @@ langchain-huggingface
 
 # Payments
 stripe
+
+streamlit
+requests

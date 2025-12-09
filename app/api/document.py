@@ -5,6 +5,7 @@ from app.utils.subscription import require_active_subscription
 from app.services.document_service import extract_text_from_file, chunk_text, embed_chunks
 from app.utils.vector_store import get_or_create_collection
 from sentence_transformers import util
+from app.utils.subscription import require_active_subscription
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
