@@ -1,43 +1,5 @@
 import streamlit as st
-import requests
-
-API_BASE = "http://localhost:8000"
-
-# ---------------- UTIL FUNCTIONS -----------------
-def api_post(path, json=None, files=None, token=None):
-    headers = {}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-
-    try:
-        if files:
-            res = requests.post(API_BASE + path, files=files, headers=headers)
-        else:
-            res = requests.post(API_BASE + path, json=json, headers=headers)
-        if res.status_code >= 400:
-            st.error(res.text)
-            return None
-        return res.json()
-    except Exception as e:
-        st.error(f"Request failed: {e}")
-        return None
-
-
-def api_get(path, token=None):
-    headers = {}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-
-    try:
-        res = requests.get(API_BASE + path, headers=headers)
-        if res.status_code >= 400:
-            st.error(res.text)
-            return None
-        return res.json()
-    except Exception as e:
-        st.error(f"Request failed: {e}")
-        return None
-
+from utils import api_post, api_get
 
 # ---------------- SESSION STATE -----------------
 if "token" not in st.session_state:
@@ -62,10 +24,7 @@ page = st.sidebar.radio(
     ["Login", "Register", "Upload Document", "RAG Chat", "AI Agent", "Billing"]
 )
 
-
-# ----------------------------------------------------
 # ------------------- LOGIN PAGE ---------------------
-# ----------------------------------------------------
 if page == "Login":
     st.header("🔐 Login")
 
@@ -74,8 +33,6 @@ if page == "Login":
 
     if st.button("Login"):
         res = api_post("/auth/login", json={"email": email, "password": password})
-
-        # st.write("RAW RESPONSE:", res)
 
         if not res:
             st.error("Login failed")
@@ -97,10 +54,7 @@ if page == "Login":
             else:
                 st.error("Unexpected response from server")
 
-
-# ----------------------------------------------------
 # ------------------- REGISTER PAGE ------------------
-# ----------------------------------------------------
 elif page == "Register":
     st.header("📝 Register")
 
@@ -119,10 +73,7 @@ elif page == "Register":
         if res:
             st.success("Account created! You may login now.")
 
-
-# ----------------------------------------------------
 # ------------------- UPLOAD DOC PAGE ----------------
-# ----------------------------------------------------
 elif page == "Upload Document":
     st.header("📤 Upload Document")
 
@@ -142,10 +93,7 @@ elif page == "Upload Document":
                 st.success("Uploaded successfully!")
                 st.json(res)
 
-
-# ----------------------------------------------------
 # ------------------- RAG CHAT PAGE ------------------
-# ----------------------------------------------------
 elif page == "RAG Chat":
     st.header("💬 Ask Questions (RAG)")
 
@@ -170,10 +118,7 @@ elif page == "RAG Chat":
             st.session_state.chat_history.append({"role": "assistant", "text": answer})
             st.chat_message("assistant").write(answer)
 
-
-# ----------------------------------------------------
 # ------------------- AGENT CHAT PAGE ----------------
-# ----------------------------------------------------
 elif page == "AI Agent":
     st.header("🤖 AI Agent")
 
@@ -190,9 +135,7 @@ elif page == "AI Agent":
             st.subheader("Agent Response")
             st.write(res.get("response", ""))
 
-# ----------------------------------------------------
 # ------------------- BILLING PAGE -------------------
-# ----------------------------------------------------
 elif page == "Billing":
     st.header("💳 Subscription / Billing")
 
