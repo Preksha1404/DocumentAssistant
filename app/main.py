@@ -8,6 +8,10 @@ app = FastAPI()
 # Create all database tables
 Base.metadata.create_all(bind=engine)
 
+@app.get("/")
+def root():
+    return {"status": "ok"}
+
 @app.get("/payment-success")
 def success_page():
     return HTMLResponse("""
