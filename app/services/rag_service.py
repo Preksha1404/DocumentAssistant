@@ -1,13 +1,12 @@
-from sentence_transformers import SentenceTransformer
-from google.generativeai import GenerativeModel
 from app.utils.vector_store import get_or_create_collection
+from app.utils.models import models
 
-embedding_model = SentenceTransformer("pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb")
-gemini_model = GenerativeModel("gemini-2.5-flash")
+gemini_model = models.llm
+embeddings= models.embeddings
 
 def run_rag_query(question: str, k: int = 5):
     # Embed
-    query_embedding = embedding_model.encode(question).tolist()
+    query_embedding = models.embeddings.embed_query(question)
 
     # Retrieve
     collection = get_or_create_collection("physio_docs")

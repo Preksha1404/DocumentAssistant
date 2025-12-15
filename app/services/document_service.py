@@ -6,8 +6,7 @@ from docx import Document
 from fastapi import UploadFile
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
-from langchain_huggingface import HuggingFaceEmbeddings
-from sentence_transformers import SentenceTransformer
+from app.utils.models import models
 
 # FILE TEXT EXTRACTION
 async def extract_text_from_file(file: UploadFile) -> str:
@@ -76,19 +75,13 @@ def preprocess_text(text: str) -> str:
 
     return text.strip()
 
-# HUGGINGFACE EMBEDDING FOR SEMANTIC CHUNKER
-def get_langchain_embeddings():
-    return HuggingFaceEmbeddings(
-        model_name="pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb"
-    )
-
-langchain_embeddings = get_langchain_embeddings()
-
 # HYBRID CHUNKING (Semantic → Fallback Recursive)
 def chunk_text(text: str, chunk_size: int = 512, chunk_overlap: int = 100):
 
+    embeddings = models.embeddings
+
     # Semantic Chunker
-    semantic_splitter = SemanticChunker(langchain_embeddings)
+    semantic_splitter = SemanticChunker(embeddings)
     semantic_chunks = semantic_splitter.split_text(text)
 
     # Recursive fallback for oversized chunks
@@ -107,13 +100,9 @@ def chunk_text(text: str, chunk_size: int = 512, chunk_overlap: int = 100):
 
     return final_chunks
 
-# EMBEDDING USING SENTENCE TRANSFORMERS
-embedding_model = SentenceTransformer("pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb")
+# EMBEDDING
 
 def embed_chunks(chunks: list[str]):
-    vectors = embedding_model.encode(
-        chunks,
-        convert_to_numpy=True,
-        normalize_embeddings=True
-    )
-    return vectors.tolist()
+    embeddings = models.embeddings
+    vectors = embeddings.embed_documents(chunks)
+    return vectors

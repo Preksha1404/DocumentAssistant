@@ -1,42 +1,114 @@
 from langchain.tools import tool
-from transformers import pipeline
-from google.generativeai import GenerativeModel
-
-llm = GenerativeModel("gemini-2.5-flash")
-
-summarizer = pipeline(
-    "summarization",
-    model="google/pegasus-xsum"
-)
-
-topic_classifier = pipeline(
-    "zero-shot-classification",
-    model="typeform/distilbert-base-uncased-mnli"
-)
-
-sentiment = pipeline(
-    "text-classification",
-    model="emilyalsentzer/Bio_ClinicalBERT"
-)
+from app.utils.models import models
+from app.agents.context import context
 
 @tool
-def summarize_tool(text: str):
-    """Summarize physiotherapy document text."""
-    summary = summarizer(text)[0]["summary_text"]
-    return f"Summary:\n{summary}"
+def summarize_tool():
+    """
+    Summarize previously retrieved documents from context.
+    """
+    if not context.retrieved_docs:
+        return "No documents loaded. Please retrieve documents first."
+
+    prompt = f"""
+Summarize the following medical/physiotherapy documents clearly and concisely.
+
+Return 5 bullet points.
+
+Documents:
+{context.retrieved_docs}
+"""
+    response = models.llm.generate_content(prompt)
+    return response.text
 
 @tool
-def topic_tool(text: str):
-    """Classify topic of document text."""
-    labels = ["exercise therapy", "manual therapy", "electrotherapy", "pain management", "rehabilitation"]
-    result = topic_classifier(text, labels)
-    topic = result["labels"][0]
-    return f"Detected Topic: {topic}"
+def topic_tool():
+    """
+    Classify the main topic of previously retrieved documents.
+    """
+    if not context.retrieved_docs:
+        return "No documents loaded. Please retrieve documents first."
+
+    prompt = f"""
+Identify the SINGLE most relevant topic for the following physiotherapy documents.
+Choose or infer one:
+
+- exercise therapy
+- manual therapy
+- electrotherapy
+- pain management
+- rehabilitation
+
+Documents:
+{context.retrieved_docs}
+
+Return only the topic name.
+"""
+    response = models.llm.generate_content(prompt)
+    return response.text.strip()
 
 @tool
-def sentiment_tool(text: str):
-    """Perform sentiment analysis on clinical text."""
-    output = sentiment(text)[0]
-    label = output["label"]
-    score = round(output["score"], 3)
-    return f"Sentiment: {label} (confidence: {score})"
+def sentiment_tool():
+    """
+    Analyze sentiment of previously retrieved documents.
+    """
+    if not context.retrieved_docs:
+        return "No documents loaded. Please retrieve documents first."
+
+    prompt = f"""
+Analyze the sentiment of the following medical documents.
+
+Classify as:
+- Positive
+- Neutral
+- Negative
+
+Documents:
+{context.retrieved_docs}
+
+Return sentiment and a short explanation.
+"""
+    response = models.llm.generate_content(prompt)
+    return response.text
+
+
+
+
+# from langchain.tools import tool
+# from app.utils.models import models
+
+# llm = models.llm
+
+# @tool
+# def summarize_tool(text: str):
+#     """
+#     Summarizes the given text into a concise summary.
+#     """
+#     summary = models.summarizer(text)[0]["summary_text"]
+#     return f"Summary:\n{summary}"
+
+# @tool
+# def topic_tool(text: str):
+#     """
+#     Classifies the main topic of the given text using predefined healthcare-related labels.
+#     """
+#     labels = [
+#         "exercise therapy",
+#         "manual therapy",
+#         "electrotherapy",
+#         "pain management",
+#         "rehabilitation",
+#     ]
+#     result = models.topic_classifier(text, labels)
+#     topic = result["labels"][0]
+#     return f"Detected Topic: {topic}"
+
+# @tool
+# def sentiment_tool(text: str):
+#     """
+#     Detects the sentiment of the given text and returns the label with confidence score.
+#     """
+#     output = models.sentiment(text)[0]
+#     label = output["label"]
+#     score = round(output["score"], 3)
+#     return f"Sentiment: {label} (confidence: {score})"

@@ -1,6 +1,6 @@
 from langchain.agents import create_agent
 from langchain_google_vertexai import ChatVertexAI
-from app.agents.rag_tool import rag_tool, search_docs
+from app.agents.rag_tool import rag_tool, retrieve_docs
 from app.agents.insight_tools import summarize_tool, topic_tool, sentiment_tool
 import os
 import vertexai
@@ -13,52 +13,56 @@ model = ChatVertexAI(
 )
 
 SYSTEM_PROMPT = """
-You are an AI Agent with autonomous tool abilities.
+You are an AI agent that answers questions using tools and retrieved documents.
 
-TOOLS:
-1. search_docs → Retrieves relevant RAW text chunks from stored documents.
-2. rag_tool → Performs full RAG (retrieval + LLM reasoning).
-3. summarize_tool → Summarizes text AFTER using search_docs.
-4. topic_tool → Classifies topic AFTER using search_docs.
-5. sentiment_tool → Runs sentiment AFTER using search_docs.
+AVAILABLE TOOLS:
+1. retrieve_docs
+   - Retrieves relevant document text ONCE and stores it in context.
 
-RULES:
+2. summarize_tool
+   - Summarizes previously retrieved documents.
 
-### DOCUMENT OPERATIONS
-When user requests:
-- summarization
-- topic classification
-- sentiment analysis
+3. topic_tool
+   - Identifies the main topic of previously retrieved documents.
 
-ALWAYS:
-1) Call search_docs(query)
-2) Pass ONLY the retrieved document text into summarize_tool | topic_tool | sentiment_tool.
-NEVER run these tools directly on the user query.
+4. sentiment_tool
+   - Analyzes sentiment of previously retrieved documents.
 
-### RAG OPERATIONS
-Use rag_tool when:
-- The user asks a direct question about what the document says.
-- The question needs reasoning across retrieved chunks.
-Examples:
-- “What does the document say about ACL rehab week 6?”
-- “Answer based on my documents…”
+5. rag_tool
+   - Performs Retrieval-Augmented Generation for document-based questions.
 
-### TOOL ROUTING LOGIC
-- “Summarize …” → search_docs → summarize_tool
-- “Topic …” → search_docs → topic_tool
-- “Sentiment …” → search_docs → sentiment_tool
-- “Explain / What does / Based on my docs…” → rag_tool
+---
 
-### GENERAL RULES
-- Never ask the user to upload content.
-- Always rely on search_docs or rag_tool.
-- Final answer must be plain natural language.
+CORE RULES:
+
+DOCUMENT-BASED TASKS:
+- For summarization, topic detection, or sentiment analysis:
+  1. ALWAYS call retrieve_docs(query) first if no documents are loaded.
+  2. Then call the appropriate tool.
+  3. NEVER ask the user to upload documents.
+  4. NEVER pass the user query directly into analysis tools.
+
+RAG QUESTION ANSWERING:
+- Use rag_tool when:
+  - The user asks a direct question about document content.
+  - The question requires reasoning or explanation based on documents.
+  - Examples:
+    - "What does the document say about ACL rehab week 6?"
+    - "Explain based on my documents"
+
+CONTEXT USAGE:
+- Reuse retrieved documents across multiple tasks.
+- Do NOT re-retrieve unless the user changes the topic or requests new documents.
+
+OUTPUT RULES:
+- Final responses must be clear, concise, and in plain natural language.
+- Do not mention tools, prompts, or internal steps.
 """
 
 agent = create_agent(
     model=model,
     tools=[
-        search_docs,
+        retrieve_docs,
         rag_tool,
         summarize_tool,
         topic_tool,
