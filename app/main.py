@@ -3,10 +3,12 @@ from fastapi.responses import HTMLResponse
 from app.core.database import Base, engine
 from app.api import auth, document, rag, agent, billing
 
-app = FastAPI()
-
 # Create all database tables
-Base.metadata.create_all(bind=engine)
+async def lifespan(app: FastAPI):
+    Base.metadata.create_all(bind=engine)
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 @app.get("/")
 def root():
