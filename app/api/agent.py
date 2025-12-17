@@ -4,8 +4,12 @@ from app.models.users import User
 # from app.utils.subscription import require_active_subscription
 from app.utils.auth_dependencies import get_current_user
 from app.agents.agent import agent
+from app.middleware.agent_context_middleware import agent_context_middleware
+from app.agents.context import context
 
 router = APIRouter(prefix="/agent", tags=["AI-Agent"])
+
+run_agent = agent_context_middleware(agent)
 
 class AgentRequest(BaseModel):
     query: str
@@ -15,9 +19,9 @@ async def ask_agent(request: AgentRequest, current_user: User = Depends(get_curr
     if not current_user:
         raise HTTPException(status_code=401, detail="Unauthorized")
 
-    result = agent.invoke({
-        "messages": [{"role": "user", "content": request.query}]
-    })
+    context.user_id = current_user.id
+
+    result = run_agent(request.query)
 
     # Last AI Message
     ai_msg = result["messages"][-1]

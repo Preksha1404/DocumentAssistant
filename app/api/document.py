@@ -6,6 +6,8 @@ from app.services.document_service import extract_text_from_file, chunk_text, em
 from app.utils.vector_store import get_or_create_collection
 from sentence_transformers import util
 from app.utils.auth_dependencies import get_current_user
+from app.core.database import get_db
+from app.models.documents import Document
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
@@ -30,6 +32,17 @@ async def upload_document(
         # Extract text
         text_content = await extract_text_from_file(file)
 
+        # Save raw text to PostgreSQL
+        doc_record = Document(
+            user_id=current_user.id,
+            filename=file.filename,
+            content=text_content
+        )
+        db = next(get_db())
+        db.add(doc_record)
+        db.commit()
+        db.refresh(doc_record)
+    
         # Chunk text
         chunks = chunk_text(text_content)
         # for i, ch in enumerate(chunks):

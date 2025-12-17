@@ -1,9 +1,13 @@
+import os
+import vertexai
 from langchain.agents import create_agent
 from langchain_google_vertexai import ChatVertexAI
 from app.agents.rag_tool import rag_tool, retrieve_docs
-from app.agents.insight_tools import summarize_tool, topic_tool, sentiment_tool
-import os
-import vertexai
+from app.agents.insight_tools import (
+    summarize_tool,
+    topic_tool,
+    sentiment_tool
+)
 
 vertexai.init(project=os.getenv("GOOGLE_CLOUD_PROJECT"))
 
@@ -13,50 +17,25 @@ model = ChatVertexAI(
 )
 
 SYSTEM_PROMPT = """
-You are an AI agent that answers questions using tools and retrieved documents.
+You are an autonomous document intelligence AI agent.
 
-AVAILABLE TOOLS:
-1. retrieve_docs
-   - Retrieves relevant document text ONCE and stores it in context.
+Your job is to decide which tools to use based on user intent.
 
-2. summarize_tool
-   - Summarizes previously retrieved documents.
+RULES:
 
-3. topic_tool
-   - Identifies the main topic of previously retrieved documents.
+1. For summary / topic / sentiment:
+   - retrieve_docs MUST be used first if documents are not cached.
 
-4. sentiment_tool
-   - Analyzes sentiment of previously retrieved documents.
+2. For factual or explanatory questions:
+   - use rag_tool.
 
-5. rag_tool
-   - Performs Retrieval-Augmented Generation for document-based questions.
+3. Reuse cached documents when available.
 
----
+4. Never ask the user to upload documents.
+5. Never mention tools or internal steps.
+6. If no documents exist, say you cannot answer.
 
-CORE RULES:
-
-DOCUMENT-BASED TASKS:
-- For summarization, topic detection, or sentiment analysis:
-  1. ALWAYS call retrieve_docs(query) first if no documents are loaded.
-  2. Then call the appropriate tool.
-  3. NEVER ask the user to upload documents.
-  4. NEVER pass the user query directly into analysis tools.
-
-RAG QUESTION ANSWERING:
-- Use rag_tool when:
-  - The user asks a direct question about document content.
-  - The question requires reasoning or explanation based on documents.
-  - Examples:
-    - "What does the document say about ACL rehab week 6?"
-    - "Explain based on my documents"
-
-CONTEXT USAGE:
-- Reuse retrieved documents across multiple tasks.
-- Do NOT re-retrieve unless the user changes the topic or requests new documents.
-
-OUTPUT RULES:
-- Final responses must be clear, concise, and in plain natural language.
-- Do not mention tools, prompts, or internal steps.
+Respond concisely and grounded in documents.
 """
 
 agent = create_agent(

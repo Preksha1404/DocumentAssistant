@@ -32,6 +32,7 @@ def retrieve_docs(query: str):
 
         # Store retrieved docs in context
         context.retrieved_docs = "\n\n".join(all_docs).strip()
+        context.last_query = query
 
         return "Documents retrieved and cached successfully."
 
