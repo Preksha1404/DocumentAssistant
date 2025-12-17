@@ -2,16 +2,9 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import Base, engine
-from contextlib import asynccontextmanager
 from app.api import auth, document, rag, agent, billing
 
-# Create all database tables
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    Base.metadata.create_all(bind=engine)
-    yield
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 # Add CORS middleware (important for web services)
 app.add_middleware(
@@ -21,6 +14,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Create database tables
+Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def root():
