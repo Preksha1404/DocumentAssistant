@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from app.core.database import Base, engine
+from contextlib import asynccontextmanager
 from app.api import auth, document, rag, agent, billing
 
 # Create all database tables
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     yield
