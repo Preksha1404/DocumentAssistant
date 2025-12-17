@@ -2,8 +2,8 @@ import os
 import vertexai
 from langchain.agents import create_agent
 from langchain_google_vertexai import ChatVertexAI
-from app.agents.rag_tool import rag_tool, retrieve_docs
-from app.agents.insight_tools import (
+from src.agents.rag_tool import rag_tool, retrieve_docs
+from src.agents.insight_tools import (
     summarize_tool,
     topic_tool,
     sentiment_tool

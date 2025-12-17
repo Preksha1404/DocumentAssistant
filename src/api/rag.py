@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from app.models.users import User
+from src.models.users import User
 # from app.utils.subscription import require_active_subscription
-from app.utils.auth_dependencies import get_current_user
-from app.services.rag_service import run_rag_query
+from src.utils.auth_dependencies import get_current_user
+from src.services.rag_service import run_rag_query
 
 # Upload → Extract → Preprocess → Chunk → Embed → Store → (User asks) → Query Embed → Retrieve → Build Prompt → Gemini → Response
 

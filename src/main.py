@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.database import Base, engine
-from app.api import auth, document, rag, agent, billing
+from src.core.database import Base, engine
+from src.api import auth, document, rag, agent, billing
 
 app = FastAPI()
 

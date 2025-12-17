@@ -1,4 +1,4 @@
-from app.agents.context import context
+from src.agents.context import context
 from langchain_core.messages import HumanMessage
 
 def agent_context_middleware(agent):

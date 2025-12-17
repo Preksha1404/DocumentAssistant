@@ -1,8 +1,8 @@
 from langchain.tools import tool
-from app.services.rag_service import run_rag_query
-from app.services.document_service import embed_chunks
-from app.utils.vector_store import get_or_create_collection
-from app.agents.context import context
+from src.services.rag_service import run_rag_query
+from src.services.document_service import embed_chunks
+from src.utils.vector_store import get_or_create_collection
+from src.agents.context import context
 
 @tool
 def retrieve_docs(query: str):

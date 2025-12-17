@@ -1,8 +1,8 @@
 from fastapi import Depends, HTTPException, status, Cookie, Header
 from sqlalchemy.orm import Session
-from app.models.users import User
-from app.utils.auth_functions import verify_token
-from app.core.database import get_db
+from src.models.users import User
+from src.utils.auth_functions import verify_token
+from src.core.database import get_db
 from typing import Optional
 
 def get_current_user(

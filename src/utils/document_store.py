@@ -1,4 +1,4 @@
-from app.models.documents import Document
+from src.models.documents import Document
 from sqlalchemy.orm import Session
 
 def load_full_documents(user_id: int, db: Session, filenames: list[str] | None = None) -> str:

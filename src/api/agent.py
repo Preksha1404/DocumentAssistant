@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from app.models.users import User
+from src.models.users import User
 # from app.utils.subscription import require_active_subscription
-from app.utils.auth_dependencies import get_current_user
-from app.agents.agent import agent
-from app.middleware.agent_context_middleware import agent_context_middleware
-from app.agents.context import context
+from src.utils.auth_dependencies import get_current_user
+from src.agents.agent import agent
+from src.middleware.agent_context_middleware import agent_context_middleware
+from src.agents.context import context
 
 router = APIRouter(prefix="/agent", tags=["AI-Agent"])
 

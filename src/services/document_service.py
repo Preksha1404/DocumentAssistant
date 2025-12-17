@@ -6,7 +6,7 @@ from docx import Document
 from fastapi import UploadFile
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
-from app.utils.models import models
+from src.utils.models import models
 
 # FILE TEXT EXTRACTION
 async def extract_text_from_file(file: UploadFile) -> str:

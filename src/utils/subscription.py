@@ -1,9 +1,9 @@
 from fastapi import HTTPException, Depends
 from datetime import datetime
 from sqlalchemy.orm import Session
-from app.core.database import get_db
-from app.models.users import User
-from app.utils.auth_dependencies import get_current_user
+from src.core.database import get_db
+from src.models.users import User
+from src.utils.auth_dependencies import get_current_user
 
 def require_active_subscription(
     current_user: User = Depends(get_current_user),

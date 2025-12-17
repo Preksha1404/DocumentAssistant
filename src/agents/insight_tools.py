@@ -1,8 +1,8 @@
 from langchain.tools import tool
-from app.utils.models import models
-from app.agents.context import context
-from app.core.database import get_db
-from app.utils.document_store import load_full_documents
+from src.utils.models import models
+from src.agents.context import context
+from src.core.database import get_db
+from src.utils.document_store import load_full_documents
 
 @tool
 def summarize_tool():

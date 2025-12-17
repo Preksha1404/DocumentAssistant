@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from fastapi import HTTPException, status
 from typing import Optional
 from dotenv import load_dotenv
-from app.schemas.users import TokenData
+from src.schemas.users import TokenData
 
 load_dotenv()
 

@@ -5,9 +5,9 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from datetime import datetime
-from app.core.database import get_db
-from app.models.users import User
-from app.utils.auth_dependencies import get_current_user
+from src.core.database import get_db
+from src.models.users import User
+from src.utils.auth_dependencies import get_current_user
 
 logger = logging.getLogger("billing")
 logger.setLevel(logging.INFO)

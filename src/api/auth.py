@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, Response, Cookie, HTTPException, status
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
-from app.core.database import SessionLocal
-from app.models.users import User
-from app.schemas.users import UserCreate, UserLogin, UserResponse
-from app.utils.auth_dependencies import get_current_user
-from app.services.auth_service import AuthService
+from src.core.database import SessionLocal
+from src.models.users import User
+from src.schemas.users import UserCreate, UserLogin, UserResponse
+from src.utils.auth_dependencies import get_current_user
+from src.services.auth_service import AuthService
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 

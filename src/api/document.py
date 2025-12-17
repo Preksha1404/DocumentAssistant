@@ -1,13 +1,13 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from fastapi.responses import JSONResponse
-from app.models.users import User
+from src.models.users import User
 # from app.utils.subscription import require_active_subscription
-from app.services.document_service import extract_text_from_file, chunk_text, embed_chunks
-from app.utils.vector_store import get_or_create_collection
+from src.services.document_service import extract_text_from_file, chunk_text, embed_chunks
+from src.utils.vector_store import get_or_create_collection
 from sentence_transformers import util
-from app.utils.auth_dependencies import get_current_user
-from app.core.database import get_db
-from app.models.documents import Document
+from src.utils.auth_dependencies import get_current_user
+from src.core.database import get_db
+from src.models.documents import Document
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 

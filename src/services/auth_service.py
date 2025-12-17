@@ -3,9 +3,9 @@ import os
 from datetime import timedelta
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
-from app.models.users import User
-from app.schemas.users import UserCreate, UserLogin
-from app.utils.auth_functions import get_pwd_hash, verify_pwd, create_access_token, create_refresh_token, ACCESS_TOKEN_EXPIRE, REFRESH_TOKEN_EXPIRE
+from src.models.users import User
+from src.schemas.users import UserCreate, UserLogin
+from src.utils.auth_functions import get_pwd_hash, verify_pwd, create_access_token, create_refresh_token, ACCESS_TOKEN_EXPIRE, REFRESH_TOKEN_EXPIRE
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM")

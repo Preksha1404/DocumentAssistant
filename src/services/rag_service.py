@@ -1,5 +1,5 @@
-from app.utils.vector_store import get_or_create_collection
-from app.utils.models import models
+from src.utils.vector_store import get_or_create_collection
+from src.utils.models import models
 
 gemini_model = models.llm
 embeddings= models.embeddings
