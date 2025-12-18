@@ -6,7 +6,6 @@ from src.api import auth, document, rag, agent, billing
 
 app = FastAPI()
 
-# Add CORS middleware (important for web services)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -15,8 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Create database tables
-# Base.metadata.create_all(bind=engine)
+@app.on_event("startup")
+def startup():
+    Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def root():
@@ -28,20 +28,22 @@ def health_check():
 
 @app.get("/payment-success")
 def success_page():
-    return HTMLResponse("""
-        <h2>Payment Successful</h2>
-        <p>You can now return to the application.</p>
-    """)
+    return HTMLResponse("<h2>Payment Successful</h2>")
 
 @app.get("/payment-cancel")
 def cancel_page():
-    return HTMLResponse("""
-        <h2>Payment Cancelled</h2>
-        <p>Your subscription was not activated.</p>
-    """)
+    return HTMLResponse("<h2>Payment Cancelled</h2>")
 
 app.include_router(auth.router)
 app.include_router(document.router)
 app.include_router(rag.router)
 app.include_router(agent.router)
 app.include_router(billing.router)
+
+if __name__ == "__main__":
+    import os, uvicorn
+    uvicorn.run(
+        "src.main:app",
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8000)),
+    )
