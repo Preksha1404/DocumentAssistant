@@ -1,18 +1,9 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from fastapi.middleware.cors import CORSMiddleware
 from src.core.database import Base, engine
 from src.api import auth, document, rag, agent, billing
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 @app.on_event("startup")
 def startup():
@@ -39,11 +30,3 @@ app.include_router(document.router)
 app.include_router(rag.router)
 app.include_router(agent.router)
 app.include_router(billing.router)
-
-if __name__ == "__main__":
-    import os, uvicorn
-    uvicorn.run(
-        "src.main:app",
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 8000)),
-    )
