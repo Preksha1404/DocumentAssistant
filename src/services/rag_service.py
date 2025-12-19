@@ -50,7 +50,7 @@ asks for:
 You may **infer, reason, summarize, or create suggestions** using the snippet content.
 
 RULES:
-1. Always use the information and themes found in the snippets.
+1. Always use the information found in the snippets.
 2. If the answer is not explicitly written, you may INFER or CREATE it based on the document’s content.
 3. Only if the snippets are completely irrelevant to the question, reply:
    "Not available in the document."

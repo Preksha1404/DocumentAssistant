@@ -44,6 +44,8 @@ def retrieve_docs(query: str):
 def rag_tool(query: str, k: int = 5):
     """
     Perform Retrieval-Augmented Generation over stored documents.
-    Returns the answer and retrieved metadata.
     """
+    if not context.retrieved_docs:
+        retrieve_docs.invoke({"query": query})
+
     return run_rag_query(query, k)
