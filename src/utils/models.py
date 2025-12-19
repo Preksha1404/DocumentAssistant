@@ -15,7 +15,8 @@ class Models:
     def embeddings(self):
         if self._embeddings is None:
             self._embeddings = HuggingFaceEmbeddings(
-                model_name="pritamdeka/S-Biomed-Roberta-snli-multinli-stsb"
+                model_name="pritamdeka/S-Biomed-Roberta-snli-multinli-stsb",
+                model_kwargs={"device": "cpu"}
             )
         return self._embeddings
 
