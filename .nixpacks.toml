@@ -1,9 +1,0 @@
-[build]
-ignorePaths = [
-  ".venv",
-  "documents",
-  "chroma",
-  "chromadb",
-  "chroma_data"
-  ".cache"
-]
