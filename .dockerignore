@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+
+# Git
+.git/
+.gitignore
+
+# Environment files
+.env
+
+# Caches
+.cache/
+pip-cache/
+
+# Vector DB / embeddings
+chromadb/
+chroma/
+*.sqlite
+
+# OS files
+.DS_Store
+
+# Logs
+*.log

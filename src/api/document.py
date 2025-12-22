@@ -34,6 +34,17 @@ async def upload_document(
         text_content = await extract_text_from_file(file)
 
         # Save raw text to PostgreSQL
+        existing_doc = db.query(Document).filter(
+            Document.user_id == current_user.id,
+            Document.filename == file.filename
+        ).first()
+
+        if existing_doc:
+            return JSONResponse(content={
+                "message": "Document with this filename already exists.",
+                "filename": file.filename
+            }, status_code=400)
+        
         doc_record = Document(
             user_id=current_user.id,
             filename=file.filename,

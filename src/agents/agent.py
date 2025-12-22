@@ -13,7 +13,6 @@ vertexai.init(project=os.getenv("GOOGLE_CLOUD_PROJECT"))
 
 model = ChatVertexAI(
     model_name="gemini-2.5-flash",
-    temperature=0.1,
 )
 
 SYSTEM_PROMPT = """
