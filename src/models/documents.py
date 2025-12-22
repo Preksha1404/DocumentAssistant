@@ -9,4 +9,5 @@ class Document(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     filename = Column(String, nullable=False)
     content = Column(Text, nullable=False)  # Store full raw text
+    content_hash = Column(String, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())

@@ -9,6 +9,7 @@ from src.utils.auth_dependencies import get_current_user
 from src.core.database import get_db
 from src.models.documents import Document
 from src.agents.context import context
+import hashlib
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
@@ -34,23 +35,32 @@ async def upload_document(
         text_content = await extract_text_from_file(file)
 
         # Save raw text to PostgreSQL
+
+        content_hash = hashlib.sha256(text_content.encode("utf-8")).hexdigest()
+
+        db = next(get_db())
+
         existing_doc = db.query(Document).filter(
             Document.user_id == current_user.id,
-            Document.filename == file.filename
+            Document.content_hash == content_hash
         ).first()
 
         if existing_doc:
-            return JSONResponse(content={
-                "message": "Document with this filename already exists.",
-                "filename": file.filename
-            }, status_code=400)
+            return JSONResponse(
+                status_code=409,
+                content={
+                    "message": "Document already uploaded",
+                    "document_id": existing_doc.id
+                }
+            )
         
         doc_record = Document(
             user_id=current_user.id,
             filename=file.filename,
-            content=text_content
+            content=text_content,
+            content_hash=content_hash
         )
-        db = next(get_db())
+        
         db.add(doc_record)
         db.commit()
         db.refresh(doc_record)
@@ -75,7 +85,7 @@ async def upload_document(
         collection = get_or_create_collection("physio_docs")
 
         # Generate unique IDs for each chunk
-        ids = [f"{file.filename}_{i}" for i in range(len(chunks))]
+        ids = [f"{doc_record.id}_{i}" for i in range(len(chunks))]
 
         # Add to ChromaDB
         collection.add(
