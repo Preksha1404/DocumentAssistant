@@ -8,6 +8,12 @@ if "token" not in st.session_state:
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
+if "agent_chat_history" not in st.session_state:
+    st.session_state.agent_chat_history = []
+
+if "active_document_id" not in st.session_state:
+    st.session_state.active_document_id = None
+
 # ---------------- SIDEBAR NAV -----------------
 st.sidebar.title("📄 Document Assistant")
 
@@ -91,7 +97,8 @@ elif page == "Upload Document":
             res = api_post("/documents/upload", files=files, token=st.session_state.token)
             if res:
                 st.success("Uploaded successfully!")
-                st.json(res)
+                st.session_state.active_document_id = res.get("document_id")
+                st.info(f"Active document ID set to {st.session_state.active_document_id}")
 
 # ------------------- RAG CHAT PAGE ------------------
 elif page == "RAG Chat":
@@ -126,14 +133,39 @@ elif page == "AI Agent":
         st.warning("Login required.")
         st.stop()
 
-    agent_question = st.text_input("Ask your AI Agent")
+    # Render agent chat history
+    for msg in st.session_state.agent_chat_history:
+        st.chat_message(msg["role"]).write(msg["text"])
 
-    if st.button("Ask Agent"):
-        res = api_post("/agent/ask", json={"query": agent_question},
-                       token=st.session_state.token)
+    # Chat input (prevents duplicate rendering)
+    agent_question = st.chat_input("Ask your AI Agent")
+
+    if agent_question:
+        # Save + show user message
+        st.session_state.agent_chat_history.append({
+            "role": "user",
+            "text": agent_question
+        })
+        st.chat_message("user").write(agent_question)
+
+        # Call agent API
+        res = api_post(
+            "/agent/ask",
+            json={
+                "query": agent_question,
+                "document_id": st.session_state.active_document_id
+            },
+            token=st.session_state.token
+        )
+
         if res:
-            st.subheader("Agent Response")
-            st.write(res.get("response", ""))
+            answer = res.get("response", "No response")
+            st.session_state.agent_chat_history.append({
+                "role": "assistant",
+                "text": answer
+            })
+            st.chat_message("assistant").write(answer)
+            
 
 # ------------------- BILLING PAGE -------------------
 elif page == "Billing":

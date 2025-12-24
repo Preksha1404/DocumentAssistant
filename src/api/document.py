@@ -8,7 +8,6 @@ from src.utils.vector_store import get_or_create_collection
 from src.utils.auth_dependencies import get_current_user
 from src.core.database import get_db
 from src.models.documents import Document
-from src.agents.context import context
 import hashlib
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
@@ -65,9 +64,6 @@ async def upload_document(
         db.commit()
         db.refresh(doc_record)
     
-        context.user_id = current_user.id
-        context.active_document_id = doc_record.id
-
         # Chunk text
         chunks = chunk_text(text_content)
         # for i, ch in enumerate(chunks):
@@ -98,6 +94,7 @@ async def upload_document(
         return JSONResponse(content={
             "message": "Document stored successfully",
             "filename": file.filename,
+            "document_id": doc_record.id,
             "total_chunks": len(chunks)
         })
 

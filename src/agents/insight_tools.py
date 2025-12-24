@@ -1,25 +1,26 @@
 from langchain.tools import tool
 from src.utils.models import models
-from src.agents.context import context
 from src.core.database import get_db
 from src.utils.document_store import load_full_documents
+from langchain_core.runnables import RunnableConfig
 
 @tool
-def summarize_tool():
+def summarize_tool(config: RunnableConfig):
     """
-    Summarize the currently selected document.
+    Summarize the selected physiotherapy document.
     """
-    if not context.user_id:
+    state = config["configurable"]["agent_state"]
+    if not state.user_id:
         return "No user context available."
 
-    if not context.active_document_id:
+    if not state.active_document_id:
         return "No document selected."
 
     db = next(get_db())
     raw_text = load_full_documents(
-        user_id=context.user_id,
+        user_id=state.user_id,
         db=db,
-        document_id=context.active_document_id
+        document_id=state.active_document_id
     )
 
     if not raw_text:
@@ -36,28 +37,29 @@ Document:
     return response.text
 
 @tool
-def topic_tool():
+def topic_tool(config: RunnableConfig):
     """
-    Identify the most relevant topic for the selected document.
+    Identify the relevant topics for the selected document.
     """
-    if not context.user_id:
+    state = config["configurable"]["agent_state"]
+    if not state.user_id:
         return "No user context available."
 
-    if not context.active_document_id:
+    if not state.active_document_id:
         return "No document selected."
 
     db = next(get_db())
     raw_text = load_full_documents(
-        user_id=context.user_id,
+        user_id=state.user_id,
         db=db,
-        document_id=context.active_document_id
+        document_id=state.active_document_id
     )
 
     if not raw_text:
         return "Document not found."
 
     prompt = f"""
-Identify the SINGLE most relevant topic for the following physiotherapy document.
+Identify the most relevant topic for the following physiotherapy document.
 
 Choose or infer one:
 - exercise therapy
@@ -75,28 +77,29 @@ Return the topic name and a brief explanation.
     return response.text.strip()
 
 @tool
-def sentiment_tool():
+def sentiment_tool(config: RunnableConfig):
     """
-    Analyze sentiment of the selected medical document.
+    Analyze sentiment of the selected physiotherapy document.
     """
-    if not context.user_id:
+    state = config["configurable"]["agent_state"]
+    if not state.user_id:
         return "No user context available."
 
-    if not context.active_document_id:
+    if not state.active_document_id:
         return "No document selected."
 
     db = next(get_db())
     raw_text = load_full_documents(
-        user_id=context.user_id,
+        user_id=state.user_id,
         db=db,
-        document_id=context.active_document_id
+        document_id=state.active_document_id
     )
 
     if not raw_text:
         return "Document not found."
 
     prompt = f"""
-Analyze the sentiment of the following medical document.
+Analyze the sentiment of the following physiotherapy document.
 
 Classify as:
 - Positive
