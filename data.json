@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What are the goals of physiotherapy after ACL reconstruction?",
+    "ground_truth": "Reduce swelling, restore range of motion, improve strength, and enable safe return to activity."
+  },
+  {
+    "question": "What are the main goals of physiotherapy after ACL reconstruction?",
+    "ground_truth": "The goals include reducing swelling, restoring knee range of motion, improving quadriceps strength, and safely returning the patient to functional activities."
+  },
+  {
+    "question": "Why is early mobilization important after total knee replacement surgery?",
+    "ground_truth": "Early mobilization helps reduce stiffness, improves circulation, prevents complications, and restores functional mobility."
+  },
+  {
+    "question": "What key components are included in an initial physiotherapy assessment?",
+    "ground_truth": "An initial assessment includes patient history, pain assessment, range of motion, strength testing, functional limitations, and treatment goals."
+  },
+  {
+    "question": "What is the purpose of physiotherapy assessment in bronchiectasis patients?",
+    "ground_truth": "The purpose is to evaluate respiratory function, sputum production, breathing patterns, and functional limitations to guide treatment."
+  }
+]

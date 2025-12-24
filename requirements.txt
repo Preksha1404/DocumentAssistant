@@ -40,3 +40,6 @@ stripe
 
 streamlit
 requests
+
+ragas
+datasets
