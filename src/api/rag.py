@@ -4,7 +4,6 @@ from src.models.users import User
 # from app.utils.subscription import require_active_subscription
 from src.utils.auth_dependencies import get_current_user
 from src.services.rag_service import run_rag_query
-from langchain_google_vertexai import ChatVertexAI
 from src.utils.models import models
 from src.utils.evaluate_rag import build_ragas_dataset
 from ragas import evaluate
@@ -18,10 +17,7 @@ from ragas.metrics import (
 )
 
 def get_gemini_llm():
-    return ChatVertexAI(
-        model_name="gemini-2.5-flash",
-        temperature=0.0,
-    )
+    return models.llm
 
 # Upload → Extract → Preprocess → Chunk → Embed → Store → (User asks) → Query Embed → Retrieve → Build Prompt → Gemini → Response
 
