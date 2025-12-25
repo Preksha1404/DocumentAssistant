@@ -5,16 +5,6 @@ from src.models.users import User
 from src.utils.auth_dependencies import get_current_user
 from src.services.rag_service import run_rag_query
 from src.utils.models import models
-from ragas import evaluate
-import os
-import json
-import asyncio
-from ragas.metrics import (
-    faithfulness,
-    answer_correctness,
-    context_precision,
-    context_recall
-)
 
 def get_gemini_llm():
     return models.llm
@@ -57,7 +47,16 @@ async def evaluate_rag(current_user: User = Depends(get_current_user)):
         test_data = json.load(f)
 
     from src.utils.evaluate_rag import build_ragas_dataset
-    
+    from ragas import evaluate
+    import os
+    import json
+    import asyncio
+    from ragas.metrics import (
+        faithfulness,
+        answer_correctness,
+        context_precision,
+        context_recall
+    )
     # Build RAGAS dataset using your RAG pipeline
     dataset = build_ragas_dataset(test_data)
 
