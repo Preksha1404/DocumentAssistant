@@ -1,3 +1,9 @@
+import os
+
+# Block evaluation in production
+if os.getenv("ENV") == "production":
+    raise RuntimeError("RAG evaluation is disabled in production")
+
 from datasets import Dataset
 from src.services.rag_service import run_rag_query
 

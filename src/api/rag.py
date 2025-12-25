@@ -7,6 +7,7 @@ from src.services.rag_service import run_rag_query
 from src.utils.models import models
 from src.utils.evaluate_rag import build_ragas_dataset
 from ragas import evaluate
+import os
 import json
 import asyncio
 from ragas.metrics import (
@@ -43,6 +44,12 @@ async def ask_rag(payload: AskRequest, current_user: User = Depends(get_current_
 
 @router.get("/evaluate")
 async def evaluate_rag(current_user: User = Depends(get_current_user)):
+    if os.getenv("ENV") == "production":
+        raise HTTPException(
+            status_code=403,
+            detail="RAG evaluation is disabled in production",
+    )
+
     if not current_user:
         raise HTTPException(status_code=401, detail="Unauthorized")
 
