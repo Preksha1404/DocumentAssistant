@@ -33,8 +33,8 @@ Return 5 bullet points.
 Document:
 {raw_text}
 """
-    response = models.llm.generate_content(prompt)
-    return response.text
+    response = models.llm.invoke(prompt)
+    return response.content
 
 @tool
 def topic_tool(config: RunnableConfig):
@@ -73,8 +73,8 @@ Document:
 
 Return the topic name and a brief explanation.
 """
-    response = models.llm.generate_content(prompt)
-    return response.text.strip()
+    response = models.llm.invoke(prompt)
+    return response.content.strip()
 
 @tool
 def sentiment_tool(config: RunnableConfig):
@@ -111,5 +111,5 @@ Document:
 
 Return sentiment and a short explanation.
 """
-    response = models.llm.generate_content(prompt)
-    return response.text
+    response = models.llm.invoke(prompt)
+    return response.content

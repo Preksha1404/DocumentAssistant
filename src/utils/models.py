@@ -1,24 +1,28 @@
-from google.generativeai import GenerativeModel
-from langchain_huggingface import HuggingFaceEmbeddings
+import os
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 class Models:
-    _llm = None
     _embeddings = None
-
-    @property
-    def llm(self):
-        if self._llm is None:
-            self._llm = GenerativeModel("gemini-2.5-flash")
-        return self._llm
+    _llm = None
 
     @property
     def embeddings(self):
         if self._embeddings is None:
-            self._embeddings = HuggingFaceEmbeddings(
-                model_name="pritamdeka/S-Biomed-Roberta-snli-multinli-stsb",
-                model_kwargs={"device": "cpu"}
+            self._embeddings = GoogleGenerativeAIEmbeddings(
+                model="models/embedding-001",
+                google_api_key=os.getenv("GOOGLE_API_KEY")
             )
         return self._embeddings
+
+    @property
+    def llm(self):
+        if self._llm is None:
+            self._llm = ChatGoogleGenerativeAI(
+                model="gemini-2.5-flash",
+                google_api_key=os.getenv("GOOGLE_API_KEY")
+            )
+        return self._llm
 
 models = Models()
 

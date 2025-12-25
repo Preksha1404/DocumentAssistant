@@ -29,10 +29,10 @@ PyMuPDF
 langchain
 langchain_text_splitters
 chromadb
-google-generativeai
+google-genai
+langchain-google-genai
 langchain-community
 langchain-experimental
-langchain-huggingface
 
 # Payments
 stripe

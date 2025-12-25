@@ -66,7 +66,8 @@ Answer:
 
 """
 
-    answer = gemini_model.generate_content(final_prompt).text
+    response = gemini_model.invoke(final_prompt)
+    answer = response.content.strip()
 
     return {
         "answer": answer,
