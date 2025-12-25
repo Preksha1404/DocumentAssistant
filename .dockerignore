@@ -13,14 +13,20 @@ __pycache__/
 # Environment files
 .env
 
-# Caches
+# Cache
 .cache/
 pip-cache/
+.huggingface/
+torch_cache/
 
 # Vector DB / embeddings
 chromadb/
 chroma/
 *.sqlite
+*.bin
+
+# Data
+documents/
 
 # OS files
 .DS_Store

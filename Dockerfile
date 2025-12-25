@@ -1,19 +1,25 @@
-# Use lightweight Linux-based Python image -> Base Image
+# Base image
 FROM python:3.11-slim
 
-# Set working directory inside container -> Workdir
+# System dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Workdir
 WORKDIR /app
 
-# Copy dependency file and install Python packages -> starter command
+# Install Python dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
 
-# Copy all project files -> copy
+# Copy app code
 COPY . .
 
-# Expose application ports -> port
+# Expose API port
 EXPOSE 8000
-EXPOSE 8501
 
-# Start FastAPI and Streamlit together -> run command
-CMD ["bash", "-c", "uvicorn src/main:app --host 0.0.0.0 --port 8000 & streamlit run frontend/app.py --server.port=8501 --server.address=0.0.0.0"]
+# Start FastAPI
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]

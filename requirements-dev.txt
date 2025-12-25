@@ -33,7 +33,13 @@ google-generativeai
 langchain-community
 langchain-experimental
 langchain-huggingface
+sentence-transformers
 
 # Payments
 stripe
+
+streamlit
 requests
+
+ragas
+datasets
