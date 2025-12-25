@@ -1,6 +1,40 @@
 import streamlit as st
 from utils import api_post, api_get
 
+redirect_page = st.query_params.get("page")
+
+def clear_query_params():
+    st.query_params.clear()
+
+if redirect_page == "payment_success":
+    st.success("🎉 Payment Successful!")
+    st.markdown("### Your subscription is now active.")
+    st.info("You can now access all premium features.")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Go to Billing"):
+            clear_query_params()
+            st.rerun()
+
+    with col2:
+        if st.button("Go to Dashboard"):
+            clear_query_params()
+            st.rerun()
+
+    st.stop()
+
+if redirect_page == "payment_cancel":
+    st.error("❌ Payment Cancelled")
+    st.markdown("Your payment was not completed.")
+    st.warning("You can retry the payment anytime from Billing.")
+
+    if st.button("Back to Billing"):
+        clear_query_params()
+        st.rerun()
+
+    st.stop()
+
 # ---------------- SESSION STATE -----------------
 if "token" not in st.session_state:
     st.session_state.token = None
@@ -208,10 +242,11 @@ elif page == "Billing":
         st.error("⛔ Trial expired. Please subscribe to continue.")
 
     st.subheader("Upgrade to Continue Usage")
-    if status in ["trialing", "past_due"]:
+    if status in ["trialing", "active"]:
+        st.button("Subscribe Now", disabled=True)
+    else:
         if st.button("Subscribe Now"):
             res = api_post("/billing/create-checkout-session", token=st.session_state.token)
             if res and "checkout_url" in res:
-                st.markdown(f"[👉 Click Here to Pay]({res['checkout_url']})")
-
+                st.markdown(f"[👉 Click Here to Pay]({res['c heckout_url']})")
     st.markdown("---")

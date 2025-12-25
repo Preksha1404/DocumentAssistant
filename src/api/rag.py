@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from src.models.users import User
-# from app.utils.subscription import require_active_subscription
-from src.utils.auth_dependencies import get_current_user
+from src.utils.subscription import require_active_subscription
+# from src.utils.auth_dependencies import get_current_user
 from src.services.rag_service import run_rag_query
 from src.utils.models import models
 
@@ -20,7 +20,7 @@ class AskRequest(BaseModel):
 
 # RAG Endpoint
 @router.post("/ask")
-async def ask_rag(payload: AskRequest, current_user: User = Depends(get_current_user)):
+async def ask_rag(payload: AskRequest, current_user: User = Depends(require_active_subscription)):
     if not current_user:
         raise HTTPException(status_code=401, detail="Unauthorized")
 
@@ -32,7 +32,7 @@ async def ask_rag(payload: AskRequest, current_user: User = Depends(get_current_
     return result
 
 @router.get("/evaluate")
-async def evaluate_rag(current_user: User = Depends(get_current_user)):
+async def evaluate_rag(current_user: User = Depends(require_active_subscription)):
     if os.getenv("ENV") == "production":
         raise HTTPException(
             status_code=403,

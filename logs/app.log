@@ -1,0 +1,248 @@
+2025-12-25 15:57:17,319 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-25 15:57:35,706 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/customers
+2025-12-25 15:57:36,672 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/customers response_code=200
+2025-12-25 15:57:37,290 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2025-12-25 15:57:38,007 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2025-12-25 15:57:38,009 | INFO | billing | Checkout session created for user_id=8
+2025-12-25 16:07:32,454 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-25 16:08:20,211 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/customers
+2025-12-25 16:08:21,198 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/customers response_code=200
+2025-12-25 16:08:21,618 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2025-12-25 16:08:22,325 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2025-12-25 16:08:22,327 | INFO | billing | Checkout session created for user_id=9
+2025-12-25 16:32:41,878 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-25 16:33:03,615 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/customers
+2025-12-25 16:33:05,443 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/customers response_code=200
+2025-12-25 16:33:05,588 | INFO | billing | Unhandled event type: customer.created
+2025-12-25 16:33:06,357 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2025-12-25 16:33:07,180 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2025-12-25 16:33:07,182 | INFO | billing | Checkout session created for user_id=10
+2025-12-25 16:33:24,024 | INFO | billing | Unhandled event type: payment_method.attached
+2025-12-25 16:33:24,031 | INFO | billing | Unhandled event type: customer.updated
+2025-12-25 16:33:24,128 | INFO | billing | 🔥 SUBSCRIPTION.CREATED WEBHOOK RECEIVED 🔥
+2025-12-25 16:33:24,129 | INFO | billing | Stripe subscription object:
+{
+  "id": "sub_1SiCKI3V2St6QW6Tw0Oa8p4J",
+  "object": "subscription",
+  "application": null,
+  "application_fee_percent": null,
+  "automatic_tax": {
+    "disabled_reason": null,
+    "enabled": false,
+    "liability": null
+  },
+  "billing_cycle_anchor": 1766747003,
+  "billing_cycle_anchor_config": null,
+  "billing_mode": {
+    "flexible": {
+      "proration_discounts": "included"
+    },
+    "type": "flexible",
+    "updated_at": 1766660589
+  },
+  "billing_thresholds": null,
+  "cancel_at": null,
+  "cancel_at_period_end": false,
+  "canceled_at": null,
+  "cancellation_details": {
+    "comment": null,
+    "feedback": null,
+    "reason": null
+  },
+  "collection_method": "charge_automatically",
+  "created": 1766660603,
+  "currency": "inr",
+  "customer": "cus_TfXO753Q5pXJGV",
+  "customer_account": null,
+  "days_until_due": null,
+  "default_payment_method": "pm_1SiCKE3V2St6QW6TIL1nc8Ee",
+  "default_source": null,
+  "default_tax_rates": [],
+  "description": null,
+  "discounts": [],
+  "ended_at": null,
+  "invoice_settings": {
+    "account_tax_ids": null,
+    "issuer": {
+      "type": "self"
+    }
+  },
+  "items": {
+    "object": "list",
+    "data": [
+      {
+        "id": "si_TfXPkH4NKDw2zV",
+        "object": "subscription_item",
+        "billing_thresholds": null,
+        "created": 1766660603,
+        "current_period_end": 1766747003,
+        "current_period_start": 1766660603,
+        "discounts": [],
+        "metadata": {},
+        "plan": {
+          "id": "price_1SaY1V3V2St6QW6TNj3H9E1V",
+          "object": "plan",
+          "active": true,
+          "amount": 19900,
+          "amount_decimal": "19900",
+          "billing_scheme": "per_unit",
+          "created": 1764837385,
+          "currency": "inr",
+          "interval": "month",
+          "interval_count": 1,
+          "livemode": false,
+          "metadata": {},
+          "meter": null,
+          "nickname": null,
+          "product": "prod_TXdId5j29s46nh",
+          "tiers_mode": null,
+          "transform_usage": null,
+          "trial_period_days": null,
+          "usage_type": "licensed"
+        },
+        "price": {
+          "id": "price_1SaY1V3V2St6QW6TNj3H9E1V",
+          "object": "price",
+          "active": true,
+          "billing_scheme": "per_unit",
+          "created": 1764837385,
+          "currency": "inr",
+          "custom_unit_amount": null,
+          "livemode": false,
+          "lookup_key": null,
+          "metadata": {},
+          "nickname": null,
+          "product": "prod_TXdId5j29s46nh",
+          "recurring": {
+            "interval": "month",
+            "interval_count": 1,
+            "meter": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
+          },
+          "tax_behavior": "unspecified",
+          "tiers_mode": null,
+          "transform_quantity": null,
+          "type": "recurring",
+          "unit_amount": 19900,
+          "unit_amount_decimal": "19900"
+        },
+        "quantity": 1,
+        "subscription": "sub_1SiCKI3V2St6QW6Tw0Oa8p4J",
+        "tax_rates": []
+      }
+    ],
+    "has_more": false,
+    "total_count": 1,
+    "url": "/v1/subscription_items?subscription=sub_1SiCKI3V2St6QW6Tw0Oa8p4J"
+  },
+  "latest_invoice": "in_1SiCKF3V2St6QW6TXED9of70",
+  "livemode": false,
+  "metadata": {
+    "user_id": "10"
+  },
+  "next_pending_invoice_item_invoice": null,
+  "on_behalf_of": null,
+  "pause_collection": null,
+  "payment_settings": {
+    "payment_method_options": {
+      "acss_debit": null,
+      "bancontact": null,
+      "card": {
+        "network": null,
+        "request_three_d_secure": "automatic"
+      },
+      "customer_balance": null,
+      "konbini": null,
+      "payto": null,
+      "sepa_debit": null,
+      "us_bank_account": null
+    },
+    "payment_method_types": null,
+    "save_default_payment_method": "off"
+  },
+  "pending_invoice_item_interval": null,
+  "pending_setup_intent": null,
+  "pending_update": null,
+  "plan": {
+    "id": "price_1SaY1V3V2St6QW6TNj3H9E1V",
+    "object": "plan",
+    "active": true,
+    "amount": 19900,
+    "amount_decimal": "19900",
+    "billing_scheme": "per_unit",
+    "created": 1764837385,
+    "currency": "inr",
+    "interval": "month",
+    "interval_count": 1,
+    "livemode": false,
+    "metadata": {},
+    "meter": null,
+    "nickname": null,
+    "product": "prod_TXdId5j29s46nh",
+    "tiers_mode": null,
+    "transform_usage": null,
+    "trial_period_days": null,
+    "usage_type": "licensed"
+  },
+  "quantity": 1,
+  "schedule": null,
+  "start_date": 1766660603,
+  "status": "trialing",
+  "test_clock": null,
+  "transfer_data": null,
+  "trial_end": 1766747003,
+  "trial_settings": {
+    "end_behavior": {
+      "missing_payment_method": "create_invoice"
+    }
+  },
+  "trial_start": 1766660603
+}
+2025-12-25 16:33:24,133 | INFO | billing | Extracted metadata: {
+  "user_id": "10"
+}
+2025-12-25 16:33:24,134 | INFO | billing | Extracted user_id from metadata: 10
+2025-12-25 16:33:24,496 | INFO | billing | User found BEFORE update → id=10 email=ranapreksha8@gmail.com status=None
+2025-12-25 16:33:24,497 | INFO | billing | Values to persist → status=trialing trial_end=2025-12-26 16:33:23 sub_id=sub_1SiCKI3V2St6QW6Tw0Oa8p4J customer_id=cus_TfXO753Q5pXJGV
+2025-12-25 16:33:24,792 | INFO | billing | ✅ DB commit successful
+2025-12-25 16:33:24,989 | INFO | billing | AFTER COMMIT → id=10 status=trialing trial_end=2025-12-26 16:33:23 sub_id=sub_1SiCKI3V2St6QW6Tw0Oa8p4J
+2025-12-25 16:33:25,091 | INFO | billing | DB VERIFY QUERY → id=10 status=trialing trial_end=2025-12-26 16:33:23
+2025-12-25 16:33:25,168 | INFO | billing | Unhandled event type: setup_intent.succeeded
+2025-12-25 16:33:25,181 | INFO | billing | Unhandled event type: checkout.session.completed
+2025-12-25 16:33:25,212 | INFO | billing | Unhandled event type: invoice.finalized
+2025-12-25 16:33:25,217 | INFO | billing | Unhandled event type: invoice.paid
+2025-12-25 16:33:25,220 | INFO | billing | Unhandled event type: setup_intent.created
+2025-12-25 16:33:25,225 | INFO | billing | Unhandled event type: invoice.created
+2025-12-25 16:33:46,122 | INFO | billing | Unhandled event type: customer.subscription.trial_will_end
+2025-12-25 17:06:00,509 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-25 17:06:01,737 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-25 17:06:03,356 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-25 17:06:03,688 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-12-25 17:06:17,794 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-25 17:06:18,009 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-25 17:06:20,862 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-25 17:06:47,285 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-25 17:06:47,403 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-25 17:06:56,622 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-25 17:52:10,924 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'

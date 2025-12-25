@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from src.models.users import User
-# from app.utils.subscription import require_active_subscription
-from src.utils.auth_dependencies import get_current_user
+from src.utils.subscription import require_active_subscription
+# from src.utils.auth_dependencies import get_current_user
 from src.agents.agent import agent
 from src.agents.agent_state import AgentState
 from src.utils.agent_dependencies import get_agent_state
@@ -17,7 +17,7 @@ class AgentRequest(BaseModel):
 async def ask_agent(
     request: AgentRequest,
     state: AgentState = Depends(get_agent_state),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_active_subscription)
 ):
     if not current_user:
         raise HTTPException(status_code=401, detail="Unauthorized")
