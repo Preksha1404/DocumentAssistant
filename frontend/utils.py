@@ -1,11 +1,7 @@
-import os
 import streamlit as st
 import requests
 
-if os.getenv("ENV") == "production":
-    API_BASE ="https://documentassistant-production.up.railway.app"
-else:
-    API_BASE = "http://localhost:8000"
+API_BASE = "https://documentassistant-production.up.railway.app"
 
 # ---------------- UTIL FUNCTIONS -----------------
 def api_post(path, json=None, files=None, token=None):
