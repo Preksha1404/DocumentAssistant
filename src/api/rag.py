@@ -5,7 +5,6 @@ from src.models.users import User
 from src.utils.auth_dependencies import get_current_user
 from src.services.rag_service import run_rag_query
 from src.utils.models import models
-from src.utils.evaluate_rag import build_ragas_dataset
 from ragas import evaluate
 import os
 import json
@@ -57,6 +56,8 @@ async def evaluate_rag(current_user: User = Depends(get_current_user)):
     with open("data.json", "r") as f:
         test_data = json.load(f)
 
+    from src.utils.evaluate_rag import build_ragas_dataset
+    
     # Build RAGAS dataset using your RAG pipeline
     dataset = build_ragas_dataset(test_data)
 
