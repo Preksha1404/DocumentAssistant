@@ -1,7 +1,5 @@
-import os
-import vertexai
 from langchain.agents import create_agent
-from langchain_google_vertexai import ChatVertexAI
+from src.utils.models import models
 from src.agents.rag_tool import rag_tool
 from src.agents.insight_tools import (
     summarize_tool,
@@ -9,11 +7,7 @@ from src.agents.insight_tools import (
     sentiment_tool
 )
 
-vertexai.init(project=os.getenv("GOOGLE_CLOUD_PROJECT"))
-
-model = ChatVertexAI(
-    model_name="gemini-2.5-flash",
-)
+model = models.llm
 
 SYSTEM_PROMPT = """
 You are an autonomous document intelligence AI agent.
