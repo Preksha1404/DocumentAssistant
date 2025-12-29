@@ -155,7 +155,9 @@ async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
 
         # INVOICE PAID (TRIAL → ACTIVE OR RENEWAL)
         elif etype == "invoice.payment_succeeded":
-            subscription_id = obj.get("subscription")
+            subscription=obj['lines']['data'][0]['parent']['subscription_item_details']
+            subscription_id = subscription.get("subscription")
+            
             if not subscription_id:
                 return JSONResponse(status_code=200, content={"status": "ignored"})
 
@@ -180,6 +182,7 @@ async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
 
             user.trial_end = None
             db.commit()
+            db.refresh(user)
 
             logger.info(
                 "Subscription activated | user=%s sub=%s",

@@ -246,3 +246,74 @@ Traceback (most recent call last):
     version = _bcrypt.__about__.__version__
               ^^^^^^^^^^^^^^^^^
 AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-29 10:23:24,826 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-29 10:23:24,932 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-12-29 10:23:25,918 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:23:31,589 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-29 10:23:32,087 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-29 10:23:32,218 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:23:37,258 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-29 10:23:37,831 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-29 10:23:37,972 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:23:43,729 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-29 10:23:44,076 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-29 10:23:44,176 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:23:49,211 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-29 10:23:49,720 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-29 10:23:49,819 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:23:52,469 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-29 10:23:54,450 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:24:04,764 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:24:18,398 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:24:27,494 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:24:34,161 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:02,026 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:07,649 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:15,409 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:22,755 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:30,674 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:40,796 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:25:52,329 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:26:06,318 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:26:13,803 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:26:23,927 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:26:30,486 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:26:52,533 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:26:59,257 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:06,125 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:12,700 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:22,089 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:30,114 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:40,732 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:49,330 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:27:57,219 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:28:04,969 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:28:11,349 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:28:31,531 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:28:42,658 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:28:49,953 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:28:55,276 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:29:02,626 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:29:10,647 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:29:31,635 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:29:50,807 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:30:14,147 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:30:23,654 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:30:29,293 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:30:53,082 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:01,340 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:07,486 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:14,784 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:21,710 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:29,607 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:47,793 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:31:55,302 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:03,901 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:12,022 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:19,349 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:30,428 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:37,667 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:44,503 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:50,392 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:32:57,168 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-29 10:33:04,097 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.

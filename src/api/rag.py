@@ -5,6 +5,8 @@ from src.utils.subscription import require_active_subscription
 # from src.utils.auth_dependencies import get_current_user
 from src.services.rag_service import run_rag_query
 from src.utils.models import models
+import os
+import json
 
 def get_gemini_llm():
     return models.llm
@@ -32,15 +34,12 @@ async def ask_rag(payload: AskRequest, current_user: User = Depends(require_acti
     return result
 
 @router.get("/evaluate")
-async def evaluate_rag(current_user: User = Depends(require_active_subscription)):
+async def evaluate_rag():
     if os.getenv("ENV") == "production":
         raise HTTPException(
             status_code=403,
             detail="RAG evaluation is disabled in production",
     )
-
-    if not current_user:
-        raise HTTPException(status_code=401, detail="Unauthorized")
 
     # Load evaluation questions
     with open("data.json", "r") as f:
@@ -48,8 +47,6 @@ async def evaluate_rag(current_user: User = Depends(require_active_subscription)
 
     from src.utils.evaluate_rag import build_ragas_dataset
     from ragas import evaluate
-    import os
-    import json
     import asyncio
     from ragas.metrics import (
         faithfulness,

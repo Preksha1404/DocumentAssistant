@@ -248,5 +248,5 @@ elif page == "Billing":
         if st.button("Subscribe Now"):
             res = api_post("/billing/create-checkout-session", token=st.session_state.token)
             if res and "checkout_url" in res:
-                st.markdown(f"[👉 Click Here to Pay]({res['c heckout_url']})")
+                st.markdown(f"[👉 Click Here to Pay]({res['checkout_url']})")
     st.markdown("---")
