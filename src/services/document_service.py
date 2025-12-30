@@ -7,6 +7,8 @@ from fastapi import UploadFile
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
 from src.utils.models import models
+from pdf2image import convert_from_bytes
+import pytesseract
 
 # FILE TEXT EXTRACTION
 async def extract_text_from_file(file: UploadFile) -> str:
@@ -27,15 +29,49 @@ async def extract_text_from_file(file: UploadFile) -> str:
 
 
 def extract_text_from_pdf(file_bytes: bytes) -> str:
-    text = ""
+    """
+    Physiotherapy PDFs → OCR FIRST, pdfplumber SECOND
+    """
 
+    # OCR extraction
+    ocr_text = extract_text_from_pdf_ocr(file_bytes)
+
+    # pdfplumber extraction
+    structured_text = ""
     with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
         for page in pdf.pages:
             page_text = page.extract_text()
             if page_text:
-                text += page_text + "\n"
+                structured_text += page_text + "\n"
 
-    return preprocess_text(text)
+    # Merge both (OCR + text layer)
+    combined_text = ocr_text + "\n\n" + structured_text
+
+    if not combined_text.strip():
+        raise ValueError("PDF text extraction failed")
+
+    return preprocess_text(combined_text)
+
+def extract_text_from_pdf_ocr(file_bytes: bytes) -> str:
+    """
+    OCR-based extraction for scanned / physiotherapy PDFs
+    """
+    images = convert_from_bytes(
+        file_bytes,
+        dpi=300,
+        poppler_path=r"C:\poppler-25.12.0\Library\bin"
+    )
+
+    text = []
+    for idx, img in enumerate(images):
+        page_text = pytesseract.image_to_string(
+            img,
+            lang="eng"
+        )
+        if page_text.strip():
+            text.append(f"\n--- Page {idx+1} ---\n{page_text}")
+
+    return "\n".join(text)
 
 def extract_text_from_docx(file_bytes: bytes) -> str:
     doc = Document(io.BytesIO(file_bytes))

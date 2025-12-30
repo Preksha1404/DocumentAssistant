@@ -37,3 +37,8 @@ langchain-experimental
 # Payments
 stripe
 requests
+
+# OCR
+pytesseract 
+pdf2image 
+pillow
