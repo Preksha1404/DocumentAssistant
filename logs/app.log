@@ -329,3 +329,1161 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-12-30 12:05:32,679 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
 2025-12-30 12:05:32,859 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
 2025-12-30 12:05:36,772 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-30 14:56:00,707 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-30 14:58:22,907 | INFO | document_ocr | [PAGE 1] Processing started
+2025-12-30 14:58:23,496 | INFO | document_ocr | [PAGE 1] text_confidence=0.4, images=2, tables=0
+2025-12-30 14:58:23,497 | WARNING | document_ocr | [PAGE 1] OCR triggered
+2025-12-30 14:58:27,052 | INFO | document_ocr | [OCR] Page 1: OCR text extracted
+2025-12-30 14:58:27,053 | INFO | document_ocr | [PAGE 2] Processing started
+2025-12-30 14:58:27,219 | INFO | document_ocr | [PAGE 2] text_confidence=1.0, images=1, tables=0
+2025-12-30 14:58:27,220 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 14:58:27,221 | INFO | document_ocr | [PAGE 3] Processing started
+2025-12-30 14:58:27,295 | INFO | document_ocr | [PAGE 3] text_confidence=0.8, images=0, tables=0
+2025-12-30 14:58:27,296 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 14:58:27,296 | INFO | document_ocr | [PAGE 4] Processing started
+2025-12-30 14:58:27,449 | INFO | document_ocr | [PAGE 4] text_confidence=1.0, images=0, tables=0
+2025-12-30 14:58:27,450 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 14:58:27,450 | INFO | document_ocr | [PAGE 5] Processing started
+2025-12-30 14:58:27,730 | INFO | document_ocr | [PAGE 5] text_confidence=0.8, images=0, tables=0
+2025-12-30 14:58:27,731 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 14:58:27,731 | INFO | document_ocr | [PAGE 6] Processing started
+2025-12-30 14:58:30,286 | INFO | document_ocr | [PAGE 6] text_confidence=0.8, images=0, tables=0
+2025-12-30 14:58:30,287 | INFO | document_ocr | [PAGE 6] OCR skipped
+2025-12-30 14:58:30,287 | INFO | document_ocr | [PAGE 7] Processing started
+2025-12-30 14:58:30,295 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P105' is an invalid float value
+2025-12-30 14:58:30,307 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P110' is an invalid float value
+2025-12-30 14:58:30,328 | INFO | document_ocr | [PAGE 7] text_confidence=0.4, images=1, tables=0
+2025-12-30 14:58:30,328 | WARNING | document_ocr | [PAGE 7] OCR triggered
+2025-12-30 14:58:31,727 | INFO | document_ocr | [OCR] Page 7: OCR text extracted
+2025-12-30 14:58:31,728 | INFO | document_ocr | [PAGE 8] Processing started
+2025-12-30 14:58:31,931 | INFO | document_ocr | [PAGE 8] text_confidence=1.0, images=4, tables=2
+2025-12-30 14:58:31,932 | INFO | document_ocr | [PAGE 8] Tables extracted via pdfplumber
+2025-12-30 14:58:31,933 | INFO | document_ocr | [PAGE 8] OCR skipped
+2025-12-30 14:58:31,933 | INFO | document_ocr | [PAGE 9] Processing started
+2025-12-30 14:58:32,171 | INFO | document_ocr | [PAGE 9] text_confidence=1.0, images=10, tables=3
+2025-12-30 14:58:32,171 | INFO | document_ocr | [PAGE 9] Tables extracted via pdfplumber
+2025-12-30 14:58:32,172 | INFO | document_ocr | [PAGE 9] OCR skipped
+2025-12-30 14:58:32,172 | INFO | document_ocr | [PAGE 10] Processing started
+2025-12-30 14:58:32,508 | INFO | document_ocr | [PAGE 10] text_confidence=1.0, images=0, tables=4
+2025-12-30 14:58:32,509 | INFO | document_ocr | [PAGE 10] Tables extracted via pdfplumber
+2025-12-30 14:58:32,509 | INFO | document_ocr | [PAGE 10] OCR skipped
+2025-12-30 14:58:32,510 | INFO | document_ocr | [PAGE 11] Processing started
+2025-12-30 14:58:32,720 | INFO | document_ocr | [PAGE 11] text_confidence=1.0, images=0, tables=2
+2025-12-30 14:58:32,721 | INFO | document_ocr | [PAGE 11] Tables extracted via pdfplumber
+2025-12-30 14:58:32,721 | INFO | document_ocr | [PAGE 11] OCR skipped
+2025-12-30 14:58:32,722 | INFO | document_ocr | [PAGE 12] Processing started
+2025-12-30 14:58:32,887 | INFO | document_ocr | [PAGE 12] text_confidence=1.0, images=3, tables=2
+2025-12-30 14:58:32,887 | INFO | document_ocr | [PAGE 12] Tables extracted via pdfplumber
+2025-12-30 14:58:32,888 | INFO | document_ocr | [PAGE 12] OCR skipped
+2025-12-30 14:58:32,888 | INFO | document_ocr | [PAGE 13] Processing started
+2025-12-30 14:58:33,162 | INFO | document_ocr | [PAGE 13] text_confidence=1.0, images=2, tables=2
+2025-12-30 14:58:33,163 | INFO | document_ocr | [PAGE 13] Tables extracted via pdfplumber
+2025-12-30 14:58:33,164 | INFO | document_ocr | [PAGE 13] OCR skipped
+2025-12-30 14:58:33,164 | INFO | document_ocr | [PAGE 14] Processing started
+2025-12-30 14:58:33,372 | INFO | document_ocr | [PAGE 14] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:08:56,709 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-30 16:10:18,592 | INFO | document_ocr | [PAGE 1] Processing started
+2025-12-30 16:10:18,864 | INFO | document_ocr | [PAGE 1] text_confidence=1.0, images=1, tables=3
+2025-12-30 16:10:18,864 | INFO | document_ocr | [PAGE 1] Tables extracted via pdfplumber
+2025-12-30 16:10:18,864 | INFO | document_ocr | [PAGE 1] OCR skipped
+2025-12-30 16:10:18,865 | INFO | document_ocr | [PAGE 2] Processing started
+2025-12-30 16:10:18,928 | INFO | document_ocr | [PAGE 2] text_confidence=0.4, images=0, tables=1
+2025-12-30 16:10:18,928 | INFO | document_ocr | [PAGE 2] Tables extracted via pdfplumber
+2025-12-30 16:10:18,928 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 16:10:18,928 | INFO | document_ocr | [PAGE 3] Processing started
+2025-12-30 16:10:19,124 | INFO | document_ocr | [PAGE 3] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:10:19,125 | INFO | document_ocr | [PAGE 3] Tables extracted via pdfplumber
+2025-12-30 16:10:19,125 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 16:10:19,125 | INFO | document_ocr | [PAGE 4] Processing started
+2025-12-30 16:10:19,213 | INFO | document_ocr | [PAGE 4] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:10:19,213 | INFO | document_ocr | [PAGE 4] Tables extracted via pdfplumber
+2025-12-30 16:10:19,213 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 16:10:19,214 | INFO | document_ocr | [PAGE 5] Processing started
+2025-12-30 16:10:19,349 | INFO | document_ocr | [PAGE 5] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:10:19,349 | INFO | document_ocr | [PAGE 5] Tables extracted via pdfplumber
+2025-12-30 16:10:19,350 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 16:14:47,041 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-30 16:15:01,382 | INFO | document_ocr | [PAGE 1] Processing started
+2025-12-30 16:15:01,658 | INFO | document_ocr | [PAGE 1] text_confidence=1.0, images=1, tables=3
+2025-12-30 16:15:01,658 | INFO | document_ocr | [PAGE 1] Tables extracted via pdfplumber
+2025-12-30 16:15:01,658 | INFO | document_ocr | [PAGE 1] OCR skipped
+2025-12-30 16:15:01,659 | INFO | document_ocr | [PAGE 2] Processing started
+2025-12-30 16:15:01,719 | INFO | document_ocr | [PAGE 2] text_confidence=0.4, images=0, tables=1
+2025-12-30 16:15:01,720 | INFO | document_ocr | [PAGE 2] Tables extracted via pdfplumber
+2025-12-30 16:15:01,720 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 16:15:01,720 | INFO | document_ocr | [PAGE 3] Processing started
+2025-12-30 16:15:01,923 | INFO | document_ocr | [PAGE 3] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:15:01,924 | INFO | document_ocr | [PAGE 3] Tables extracted via pdfplumber
+2025-12-30 16:15:01,924 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 16:15:01,924 | INFO | document_ocr | [PAGE 4] Processing started
+2025-12-30 16:15:01,997 | INFO | document_ocr | [PAGE 4] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:15:01,998 | INFO | document_ocr | [PAGE 4] Tables extracted via pdfplumber
+2025-12-30 16:15:01,998 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 16:15:01,998 | INFO | document_ocr | [PAGE 5] Processing started
+2025-12-30 16:15:02,106 | INFO | document_ocr | [PAGE 5] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:15:02,107 | INFO | document_ocr | [PAGE 5] Tables extracted via pdfplumber
+2025-12-30 16:15:02,107 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 16:19:39,083 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-30 16:19:54,665 | INFO | document_ocr | [PAGE 1] Processing started
+2025-12-30 16:19:54,986 | INFO | document_ocr | [PAGE 1] text_confidence=1.0, images=1, tables=3
+2025-12-30 16:19:54,986 | INFO | document_ocr | [PAGE 1] Tables extracted via pdfplumber
+2025-12-30 16:19:54,987 | INFO | document_ocr | [PAGE 1] OCR skipped
+2025-12-30 16:19:54,987 | INFO | document_ocr | [PAGE 2] Processing started
+2025-12-30 16:19:55,053 | INFO | document_ocr | [PAGE 2] text_confidence=0.4, images=0, tables=1
+2025-12-30 16:19:55,053 | INFO | document_ocr | [PAGE 2] Tables extracted via pdfplumber
+2025-12-30 16:19:55,053 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 16:19:55,054 | INFO | document_ocr | [PAGE 3] Processing started
+2025-12-30 16:19:55,228 | INFO | document_ocr | [PAGE 3] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:19:55,228 | INFO | document_ocr | [PAGE 3] Tables extracted via pdfplumber
+2025-12-30 16:19:55,228 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 16:19:55,229 | INFO | document_ocr | [PAGE 4] Processing started
+2025-12-30 16:19:55,308 | INFO | document_ocr | [PAGE 4] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:19:55,308 | INFO | document_ocr | [PAGE 4] Tables extracted via pdfplumber
+2025-12-30 16:19:55,308 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 16:19:55,309 | INFO | document_ocr | [PAGE 5] Processing started
+2025-12-30 16:19:55,405 | INFO | document_ocr | [PAGE 5] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:19:55,405 | INFO | document_ocr | [PAGE 5] Tables extracted via pdfplumber
+2025-12-30 16:19:55,406 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 16:19:58,453 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:19:59,673 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:19:59,850 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-12-30 16:21:31,519 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:21:31,684 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-30 16:21:35,418 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-30 16:23:49,978 | INFO | document_ocr | [PAGE 1] Processing started
+2025-12-30 16:23:51,866 | INFO | document_ocr | [PAGE 1] text_confidence=0.4, images=2, tables=0
+2025-12-30 16:23:51,866 | WARNING | document_ocr | [PAGE 1] OCR triggered
+2025-12-30 16:23:53,077 | INFO | document_ocr | [OCR] Page 1: OCR text extracted
+2025-12-30 16:23:53,078 | INFO | document_ocr | [PAGE 2] Processing started
+2025-12-30 16:23:53,146 | INFO | document_ocr | [PAGE 2] text_confidence=1.0, images=1, tables=0
+2025-12-30 16:23:53,146 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 16:23:53,146 | INFO | document_ocr | [PAGE 3] Processing started
+2025-12-30 16:23:53,182 | INFO | document_ocr | [PAGE 3] text_confidence=0.8, images=0, tables=0
+2025-12-30 16:23:53,183 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 16:23:53,183 | INFO | document_ocr | [PAGE 4] Processing started
+2025-12-30 16:23:53,249 | INFO | document_ocr | [PAGE 4] text_confidence=1.0, images=0, tables=0
+2025-12-30 16:23:53,250 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 16:23:53,250 | INFO | document_ocr | [PAGE 5] Processing started
+2025-12-30 16:23:53,354 | INFO | document_ocr | [PAGE 5] text_confidence=0.8, images=0, tables=0
+2025-12-30 16:23:53,354 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 16:23:53,355 | INFO | document_ocr | [PAGE 6] Processing started
+2025-12-30 16:23:53,435 | INFO | document_ocr | [PAGE 6] text_confidence=0.8, images=0, tables=0
+2025-12-30 16:23:53,436 | INFO | document_ocr | [PAGE 6] OCR skipped
+2025-12-30 16:23:53,436 | INFO | document_ocr | [PAGE 7] Processing started
+2025-12-30 16:23:53,441 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P105' is an invalid float value
+2025-12-30 16:23:53,445 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P110' is an invalid float value
+2025-12-30 16:23:53,452 | INFO | document_ocr | [PAGE 7] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:23:53,452 | WARNING | document_ocr | [PAGE 7] OCR triggered
+2025-12-30 16:23:54,129 | INFO | document_ocr | [OCR] Page 7: OCR text extracted
+2025-12-30 16:23:54,129 | INFO | document_ocr | [PAGE 8] Processing started
+2025-12-30 16:23:54,227 | INFO | document_ocr | [PAGE 8] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:23:54,227 | INFO | document_ocr | [PAGE 8] Tables extracted via pdfplumber
+2025-12-30 16:23:54,227 | INFO | document_ocr | [PAGE 8] OCR skipped
+2025-12-30 16:23:54,227 | INFO | document_ocr | [PAGE 9] Processing started
+2025-12-30 16:23:54,342 | INFO | document_ocr | [PAGE 9] text_confidence=1.0, images=10, tables=3
+2025-12-30 16:23:54,343 | INFO | document_ocr | [PAGE 9] Tables extracted via pdfplumber
+2025-12-30 16:23:54,344 | INFO | document_ocr | [PAGE 9] OCR skipped
+2025-12-30 16:23:54,344 | INFO | document_ocr | [PAGE 10] Processing started
+2025-12-30 16:23:54,505 | INFO | document_ocr | [PAGE 10] text_confidence=1.0, images=0, tables=4
+2025-12-30 16:23:54,505 | INFO | document_ocr | [PAGE 10] Tables extracted via pdfplumber
+2025-12-30 16:23:54,506 | INFO | document_ocr | [PAGE 10] OCR skipped
+2025-12-30 16:23:54,506 | INFO | document_ocr | [PAGE 11] Processing started
+2025-12-30 16:23:54,603 | INFO | document_ocr | [PAGE 11] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:23:54,603 | INFO | document_ocr | [PAGE 11] Tables extracted via pdfplumber
+2025-12-30 16:23:54,603 | INFO | document_ocr | [PAGE 11] OCR skipped
+2025-12-30 16:23:54,603 | INFO | document_ocr | [PAGE 12] Processing started
+2025-12-30 16:23:54,670 | INFO | document_ocr | [PAGE 12] text_confidence=1.0, images=3, tables=2
+2025-12-30 16:23:54,670 | INFO | document_ocr | [PAGE 12] Tables extracted via pdfplumber
+2025-12-30 16:23:54,671 | INFO | document_ocr | [PAGE 12] OCR skipped
+2025-12-30 16:23:54,671 | INFO | document_ocr | [PAGE 13] Processing started
+2025-12-30 16:23:54,778 | INFO | document_ocr | [PAGE 13] text_confidence=1.0, images=2, tables=2
+2025-12-30 16:23:54,778 | INFO | document_ocr | [PAGE 13] Tables extracted via pdfplumber
+2025-12-30 16:23:54,778 | INFO | document_ocr | [PAGE 13] OCR skipped
+2025-12-30 16:23:54,779 | INFO | document_ocr | [PAGE 14] Processing started
+2025-12-30 16:23:54,872 | INFO | document_ocr | [PAGE 14] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:54,873 | INFO | document_ocr | [PAGE 14] Tables extracted via pdfplumber
+2025-12-30 16:23:54,873 | INFO | document_ocr | [PAGE 14] OCR skipped
+2025-12-30 16:23:54,873 | INFO | document_ocr | [PAGE 15] Processing started
+2025-12-30 16:23:54,965 | INFO | document_ocr | [PAGE 15] text_confidence=1.0, images=0, tables=3
+2025-12-30 16:23:54,965 | INFO | document_ocr | [PAGE 15] Tables extracted via pdfplumber
+2025-12-30 16:23:54,965 | INFO | document_ocr | [PAGE 15] OCR skipped
+2025-12-30 16:23:54,965 | INFO | document_ocr | [PAGE 16] Processing started
+2025-12-30 16:23:55,085 | INFO | document_ocr | [PAGE 16] text_confidence=1.0, images=0, tables=3
+2025-12-30 16:23:55,085 | INFO | document_ocr | [PAGE 16] Tables extracted via pdfplumber
+2025-12-30 16:23:55,086 | INFO | document_ocr | [PAGE 16] OCR skipped
+2025-12-30 16:23:55,086 | INFO | document_ocr | [PAGE 17] Processing started
+2025-12-30 16:23:55,180 | INFO | document_ocr | [PAGE 17] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:55,180 | INFO | document_ocr | [PAGE 17] Tables extracted via pdfplumber
+2025-12-30 16:23:55,180 | INFO | document_ocr | [PAGE 17] OCR skipped
+2025-12-30 16:23:55,180 | INFO | document_ocr | [PAGE 18] Processing started
+2025-12-30 16:23:55,241 | INFO | document_ocr | [PAGE 18] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:55,241 | INFO | document_ocr | [PAGE 18] Tables extracted via pdfplumber
+2025-12-30 16:23:55,241 | INFO | document_ocr | [PAGE 18] OCR skipped
+2025-12-30 16:23:55,241 | INFO | document_ocr | [PAGE 19] Processing started
+2025-12-30 16:23:55,330 | INFO | document_ocr | [PAGE 19] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:23:55,330 | INFO | document_ocr | [PAGE 19] Tables extracted via pdfplumber
+2025-12-30 16:23:55,330 | INFO | document_ocr | [PAGE 19] OCR skipped
+2025-12-30 16:23:55,331 | INFO | document_ocr | [PAGE 20] Processing started
+2025-12-30 16:23:55,454 | INFO | document_ocr | [PAGE 20] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:55,454 | INFO | document_ocr | [PAGE 20] Tables extracted via pdfplumber
+2025-12-30 16:23:55,454 | INFO | document_ocr | [PAGE 20] OCR skipped
+2025-12-30 16:23:55,454 | INFO | document_ocr | [PAGE 21] Processing started
+2025-12-30 16:23:55,583 | INFO | document_ocr | [PAGE 21] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:55,583 | INFO | document_ocr | [PAGE 21] Tables extracted via pdfplumber
+2025-12-30 16:23:55,584 | INFO | document_ocr | [PAGE 21] OCR skipped
+2025-12-30 16:23:55,584 | INFO | document_ocr | [PAGE 22] Processing started
+2025-12-30 16:23:55,729 | INFO | document_ocr | [PAGE 22] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:55,730 | INFO | document_ocr | [PAGE 22] Tables extracted via pdfplumber
+2025-12-30 16:23:55,730 | INFO | document_ocr | [PAGE 22] OCR skipped
+2025-12-30 16:23:55,730 | INFO | document_ocr | [PAGE 23] Processing started
+2025-12-30 16:23:55,740 | INFO | document_ocr | [PAGE 23] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:23:55,740 | WARNING | document_ocr | [PAGE 23] OCR triggered
+2025-12-30 16:23:56,450 | INFO | document_ocr | [OCR] Page 23: OCR text extracted
+2025-12-30 16:23:56,450 | INFO | document_ocr | [PAGE 24] Processing started
+2025-12-30 16:23:56,603 | INFO | document_ocr | [PAGE 24] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:23:56,603 | WARNING | document_ocr | [PAGE 24] OCR triggered
+2025-12-30 16:23:57,941 | INFO | document_ocr | [OCR] Page 24: OCR text extracted
+2025-12-30 16:23:57,942 | INFO | document_ocr | [PAGE 25] Processing started
+2025-12-30 16:23:58,083 | INFO | document_ocr | [PAGE 25] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:58,084 | INFO | document_ocr | [PAGE 25] Tables extracted via pdfplumber
+2025-12-30 16:23:58,084 | INFO | document_ocr | [PAGE 25] OCR skipped
+2025-12-30 16:23:58,084 | INFO | document_ocr | [PAGE 26] Processing started
+2025-12-30 16:23:58,189 | INFO | document_ocr | [PAGE 26] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:58,189 | INFO | document_ocr | [PAGE 26] Tables extracted via pdfplumber
+2025-12-30 16:23:58,189 | INFO | document_ocr | [PAGE 26] OCR skipped
+2025-12-30 16:23:58,190 | INFO | document_ocr | [PAGE 27] Processing started
+2025-12-30 16:23:58,279 | INFO | document_ocr | [PAGE 27] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:58,279 | INFO | document_ocr | [PAGE 27] Tables extracted via pdfplumber
+2025-12-30 16:23:58,279 | INFO | document_ocr | [PAGE 27] OCR skipped
+2025-12-30 16:23:58,280 | INFO | document_ocr | [PAGE 28] Processing started
+2025-12-30 16:23:58,357 | INFO | document_ocr | [PAGE 28] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:58,358 | INFO | document_ocr | [PAGE 28] Tables extracted via pdfplumber
+2025-12-30 16:23:58,358 | INFO | document_ocr | [PAGE 28] OCR skipped
+2025-12-30 16:23:58,358 | INFO | document_ocr | [PAGE 29] Processing started
+2025-12-30 16:23:58,366 | INFO | document_ocr | [PAGE 29] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:23:58,366 | WARNING | document_ocr | [PAGE 29] OCR triggered
+2025-12-30 16:23:59,069 | INFO | document_ocr | [OCR] Page 29: OCR text extracted
+2025-12-30 16:23:59,069 | INFO | document_ocr | [PAGE 30] Processing started
+2025-12-30 16:23:59,176 | INFO | document_ocr | [PAGE 30] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:23:59,177 | INFO | document_ocr | [PAGE 30] Tables extracted via pdfplumber
+2025-12-30 16:23:59,177 | INFO | document_ocr | [PAGE 30] OCR skipped
+2025-12-30 16:23:59,178 | INFO | document_ocr | [PAGE 31] Processing started
+2025-12-30 16:23:59,285 | INFO | document_ocr | [PAGE 31] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:23:59,285 | INFO | document_ocr | [PAGE 31] Tables extracted via pdfplumber
+2025-12-30 16:23:59,285 | INFO | document_ocr | [PAGE 31] OCR skipped
+2025-12-30 16:23:59,285 | INFO | document_ocr | [PAGE 32] Processing started
+2025-12-30 16:23:59,345 | INFO | document_ocr | [PAGE 32] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:23:59,345 | INFO | document_ocr | [PAGE 32] Tables extracted via pdfplumber
+2025-12-30 16:23:59,345 | INFO | document_ocr | [PAGE 32] OCR skipped
+2025-12-30 16:23:59,346 | INFO | document_ocr | [PAGE 33] Processing started
+2025-12-30 16:23:59,443 | INFO | document_ocr | [PAGE 33] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:59,444 | INFO | document_ocr | [PAGE 33] Tables extracted via pdfplumber
+2025-12-30 16:23:59,444 | INFO | document_ocr | [PAGE 33] OCR skipped
+2025-12-30 16:23:59,444 | INFO | document_ocr | [PAGE 34] Processing started
+2025-12-30 16:23:59,545 | INFO | document_ocr | [PAGE 34] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:59,545 | INFO | document_ocr | [PAGE 34] Tables extracted via pdfplumber
+2025-12-30 16:23:59,545 | INFO | document_ocr | [PAGE 34] OCR skipped
+2025-12-30 16:23:59,545 | INFO | document_ocr | [PAGE 35] Processing started
+2025-12-30 16:23:59,634 | INFO | document_ocr | [PAGE 35] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:59,635 | INFO | document_ocr | [PAGE 35] Tables extracted via pdfplumber
+2025-12-30 16:23:59,635 | INFO | document_ocr | [PAGE 35] OCR skipped
+2025-12-30 16:23:59,635 | INFO | document_ocr | [PAGE 36] Processing started
+2025-12-30 16:23:59,725 | INFO | document_ocr | [PAGE 36] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:23:59,725 | INFO | document_ocr | [PAGE 36] Tables extracted via pdfplumber
+2025-12-30 16:23:59,725 | INFO | document_ocr | [PAGE 36] OCR skipped
+2025-12-30 16:23:59,726 | INFO | document_ocr | [PAGE 37] Processing started
+2025-12-30 16:23:59,804 | INFO | document_ocr | [PAGE 37] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:23:59,804 | INFO | document_ocr | [PAGE 37] Tables extracted via pdfplumber
+2025-12-30 16:23:59,805 | INFO | document_ocr | [PAGE 37] OCR skipped
+2025-12-30 16:23:59,805 | INFO | document_ocr | [PAGE 38] Processing started
+2025-12-30 16:24:00,242 | INFO | document_ocr | [PAGE 38] text_confidence=1.0, images=2, tables=1
+2025-12-30 16:24:00,243 | INFO | document_ocr | [PAGE 38] Tables extracted via pdfplumber
+2025-12-30 16:24:00,243 | INFO | document_ocr | [PAGE 38] OCR skipped
+2025-12-30 16:24:00,243 | INFO | document_ocr | [PAGE 39] Processing started
+2025-12-30 16:24:00,341 | INFO | document_ocr | [PAGE 39] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:00,341 | INFO | document_ocr | [PAGE 39] Tables extracted via pdfplumber
+2025-12-30 16:24:00,342 | INFO | document_ocr | [PAGE 39] OCR skipped
+2025-12-30 16:24:00,342 | INFO | document_ocr | [PAGE 40] Processing started
+2025-12-30 16:24:00,414 | INFO | document_ocr | [PAGE 40] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:24:00,415 | INFO | document_ocr | [PAGE 40] Tables extracted via pdfplumber
+2025-12-30 16:24:00,415 | INFO | document_ocr | [PAGE 40] OCR skipped
+2025-12-30 16:24:00,415 | INFO | document_ocr | [PAGE 41] Processing started
+2025-12-30 16:24:00,460 | INFO | document_ocr | [PAGE 41] text_confidence=0.8, images=6, tables=1
+2025-12-30 16:24:00,460 | INFO | document_ocr | [PAGE 41] Tables extracted via pdfplumber
+2025-12-30 16:24:00,461 | INFO | document_ocr | [PAGE 41] OCR skipped
+2025-12-30 16:24:00,461 | INFO | document_ocr | [PAGE 42] Processing started
+2025-12-30 16:24:00,475 | INFO | document_ocr | [PAGE 42] text_confidence=0.4, images=0, tables=0
+2025-12-30 16:24:00,476 | INFO | document_ocr | [PAGE 42] OCR skipped
+2025-12-30 16:24:00,476 | INFO | document_ocr | [PAGE 43] Processing started
+2025-12-30 16:24:00,485 | INFO | document_ocr | [PAGE 43] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:00,485 | WARNING | document_ocr | [PAGE 43] OCR triggered
+2025-12-30 16:24:01,958 | INFO | document_ocr | [OCR] Page 43: OCR text extracted
+2025-12-30 16:24:01,958 | INFO | document_ocr | [PAGE 44] Processing started
+2025-12-30 16:24:01,965 | INFO | document_ocr | [PAGE 44] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:01,966 | WARNING | document_ocr | [PAGE 44] OCR triggered
+2025-12-30 16:24:03,426 | INFO | document_ocr | [OCR] Page 44: OCR text extracted
+2025-12-30 16:24:03,427 | INFO | document_ocr | [PAGE 45] Processing started
+2025-12-30 16:24:03,433 | INFO | document_ocr | [PAGE 45] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:03,434 | WARNING | document_ocr | [PAGE 45] OCR triggered
+2025-12-30 16:24:04,599 | INFO | document_ocr | [OCR] Page 45: OCR text extracted
+2025-12-30 16:24:04,600 | INFO | document_ocr | [PAGE 46] Processing started
+2025-12-30 16:24:04,608 | INFO | document_ocr | [PAGE 46] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:04,608 | WARNING | document_ocr | [PAGE 46] OCR triggered
+2025-12-30 16:24:06,055 | INFO | document_ocr | [OCR] Page 46: OCR text extracted
+2025-12-30 16:24:06,055 | INFO | document_ocr | [PAGE 47] Processing started
+2025-12-30 16:24:06,064 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P333' is an invalid float value
+2025-12-30 16:24:06,067 | INFO | document_ocr | [PAGE 47] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:06,068 | WARNING | document_ocr | [PAGE 47] OCR triggered
+2025-12-30 16:24:06,737 | INFO | document_ocr | [OCR] Page 47: OCR text extracted
+2025-12-30 16:24:06,737 | INFO | document_ocr | [PAGE 48] Processing started
+2025-12-30 16:24:06,810 | INFO | document_ocr | [PAGE 48] text_confidence=1.0, images=6, tables=2
+2025-12-30 16:24:06,810 | INFO | document_ocr | [PAGE 48] Tables extracted via pdfplumber
+2025-12-30 16:24:06,810 | INFO | document_ocr | [PAGE 48] OCR skipped
+2025-12-30 16:24:06,811 | INFO | document_ocr | [PAGE 49] Processing started
+2025-12-30 16:24:06,892 | INFO | document_ocr | [PAGE 49] text_confidence=1.0, images=2, tables=2
+2025-12-30 16:24:06,892 | INFO | document_ocr | [PAGE 49] Tables extracted via pdfplumber
+2025-12-30 16:24:06,892 | INFO | document_ocr | [PAGE 49] OCR skipped
+2025-12-30 16:24:06,893 | INFO | document_ocr | [PAGE 50] Processing started
+2025-12-30 16:24:06,951 | INFO | document_ocr | [PAGE 50] text_confidence=1.0, images=6, tables=2
+2025-12-30 16:24:06,951 | INFO | document_ocr | [PAGE 50] Tables extracted via pdfplumber
+2025-12-30 16:24:06,952 | INFO | document_ocr | [PAGE 50] OCR skipped
+2025-12-30 16:24:06,952 | INFO | document_ocr | [PAGE 51] Processing started
+2025-12-30 16:24:07,005 | INFO | document_ocr | [PAGE 51] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:24:07,006 | INFO | document_ocr | [PAGE 51] Tables extracted via pdfplumber
+2025-12-30 16:24:07,006 | INFO | document_ocr | [PAGE 51] OCR skipped
+2025-12-30 16:24:07,006 | INFO | document_ocr | [PAGE 52] Processing started
+2025-12-30 16:24:07,100 | INFO | document_ocr | [PAGE 52] text_confidence=1.0, images=2, tables=2
+2025-12-30 16:24:07,101 | INFO | document_ocr | [PAGE 52] Tables extracted via pdfplumber
+2025-12-30 16:24:07,101 | INFO | document_ocr | [PAGE 52] OCR skipped
+2025-12-30 16:24:07,101 | INFO | document_ocr | [PAGE 53] Processing started
+2025-12-30 16:24:07,153 | INFO | document_ocr | [PAGE 53] text_confidence=1.0, images=3, tables=2
+2025-12-30 16:24:07,154 | INFO | document_ocr | [PAGE 53] Tables extracted via pdfplumber
+2025-12-30 16:24:07,154 | INFO | document_ocr | [PAGE 53] OCR skipped
+2025-12-30 16:24:07,154 | INFO | document_ocr | [PAGE 54] Processing started
+2025-12-30 16:24:07,158 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P381' is an invalid float value
+2025-12-30 16:24:07,163 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P386' is an invalid float value
+2025-12-30 16:24:07,167 | INFO | document_ocr | [PAGE 54] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:07,167 | WARNING | document_ocr | [PAGE 54] OCR triggered
+2025-12-30 16:24:07,833 | INFO | document_ocr | [OCR] Page 54: OCR text extracted
+2025-12-30 16:24:07,833 | INFO | document_ocr | [PAGE 55] Processing started
+2025-12-30 16:24:07,890 | INFO | document_ocr | [PAGE 55] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:24:07,890 | INFO | document_ocr | [PAGE 55] Tables extracted via pdfplumber
+2025-12-30 16:24:07,890 | INFO | document_ocr | [PAGE 55] OCR skipped
+2025-12-30 16:24:07,891 | INFO | document_ocr | [PAGE 56] Processing started
+2025-12-30 16:24:07,952 | INFO | document_ocr | [PAGE 56] text_confidence=1.0, images=5, tables=2
+2025-12-30 16:24:07,952 | INFO | document_ocr | [PAGE 56] Tables extracted via pdfplumber
+2025-12-30 16:24:07,952 | INFO | document_ocr | [PAGE 56] OCR skipped
+2025-12-30 16:24:07,953 | INFO | document_ocr | [PAGE 57] Processing started
+2025-12-30 16:24:08,006 | INFO | document_ocr | [PAGE 57] text_confidence=1.0, images=2, tables=2
+2025-12-30 16:24:08,007 | INFO | document_ocr | [PAGE 57] Tables extracted via pdfplumber
+2025-12-30 16:24:08,007 | INFO | document_ocr | [PAGE 57] OCR skipped
+2025-12-30 16:24:08,007 | INFO | document_ocr | [PAGE 58] Processing started
+2025-12-30 16:24:08,067 | INFO | document_ocr | [PAGE 58] text_confidence=0.8, images=2, tables=2
+2025-12-30 16:24:08,068 | INFO | document_ocr | [PAGE 58] Tables extracted via pdfplumber
+2025-12-30 16:24:08,068 | INFO | document_ocr | [PAGE 58] OCR skipped
+2025-12-30 16:24:08,068 | INFO | document_ocr | [PAGE 59] Processing started
+2025-12-30 16:24:08,132 | INFO | document_ocr | [PAGE 59] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:24:08,133 | INFO | document_ocr | [PAGE 59] Tables extracted via pdfplumber
+2025-12-30 16:24:08,133 | INFO | document_ocr | [PAGE 59] OCR skipped
+2025-12-30 16:24:08,133 | INFO | document_ocr | [PAGE 60] Processing started
+2025-12-30 16:24:08,184 | INFO | document_ocr | [PAGE 60] text_confidence=1.0, images=2, tables=1
+2025-12-30 16:24:08,184 | INFO | document_ocr | [PAGE 60] Tables extracted via pdfplumber
+2025-12-30 16:24:08,185 | INFO | document_ocr | [PAGE 60] OCR skipped
+2025-12-30 16:24:08,185 | INFO | document_ocr | [PAGE 61] Processing started
+2025-12-30 16:24:08,257 | INFO | document_ocr | [PAGE 61] text_confidence=1.0, images=3, tables=3
+2025-12-30 16:24:08,257 | INFO | document_ocr | [PAGE 61] Tables extracted via pdfplumber
+2025-12-30 16:24:08,257 | INFO | document_ocr | [PAGE 61] OCR skipped
+2025-12-30 16:24:08,258 | INFO | document_ocr | [PAGE 62] Processing started
+2025-12-30 16:24:08,317 | INFO | document_ocr | [PAGE 62] text_confidence=1.0, images=2, tables=1
+2025-12-30 16:24:08,317 | INFO | document_ocr | [PAGE 62] Tables extracted via pdfplumber
+2025-12-30 16:24:08,317 | INFO | document_ocr | [PAGE 62] OCR skipped
+2025-12-30 16:24:08,317 | INFO | document_ocr | [PAGE 63] Processing started
+2025-12-30 16:24:08,409 | INFO | document_ocr | [PAGE 63] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:24:08,409 | INFO | document_ocr | [PAGE 63] Tables extracted via pdfplumber
+2025-12-30 16:24:08,410 | INFO | document_ocr | [PAGE 63] OCR skipped
+2025-12-30 16:24:08,410 | INFO | document_ocr | [PAGE 64] Processing started
+2025-12-30 16:24:08,420 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P446' is an invalid float value
+2025-12-30 16:24:08,426 | INFO | document_ocr | [PAGE 64] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:08,426 | WARNING | document_ocr | [PAGE 64] OCR triggered
+2025-12-30 16:24:09,093 | INFO | document_ocr | [OCR] Page 64: OCR text extracted
+2025-12-30 16:24:09,094 | INFO | document_ocr | [PAGE 65] Processing started
+2025-12-30 16:24:09,211 | INFO | document_ocr | [PAGE 65] text_confidence=1.0, images=4, tables=2
+2025-12-30 16:24:09,211 | INFO | document_ocr | [PAGE 65] Tables extracted via pdfplumber
+2025-12-30 16:24:09,211 | INFO | document_ocr | [PAGE 65] OCR skipped
+2025-12-30 16:24:09,212 | INFO | document_ocr | [PAGE 66] Processing started
+2025-12-30 16:24:09,259 | INFO | document_ocr | [PAGE 66] text_confidence=1.0, images=7, tables=1
+2025-12-30 16:24:09,260 | INFO | document_ocr | [PAGE 66] Tables extracted via pdfplumber
+2025-12-30 16:24:09,260 | INFO | document_ocr | [PAGE 66] OCR skipped
+2025-12-30 16:24:09,260 | INFO | document_ocr | [PAGE 67] Processing started
+2025-12-30 16:24:09,303 | INFO | document_ocr | [PAGE 67] text_confidence=1.0, images=0, tables=0
+2025-12-30 16:24:09,303 | INFO | document_ocr | [PAGE 67] OCR skipped
+2025-12-30 16:24:09,304 | INFO | document_ocr | [PAGE 68] Processing started
+2025-12-30 16:24:09,364 | INFO | document_ocr | [PAGE 68] text_confidence=1.0, images=4, tables=1
+2025-12-30 16:24:09,365 | INFO | document_ocr | [PAGE 68] Tables extracted via pdfplumber
+2025-12-30 16:24:09,365 | INFO | document_ocr | [PAGE 68] OCR skipped
+2025-12-30 16:24:09,365 | INFO | document_ocr | [PAGE 69] Processing started
+2025-12-30 16:24:09,410 | INFO | document_ocr | [PAGE 69] text_confidence=1.0, images=1, tables=1
+2025-12-30 16:24:09,411 | INFO | document_ocr | [PAGE 69] Tables extracted via pdfplumber
+2025-12-30 16:24:09,411 | INFO | document_ocr | [PAGE 69] OCR skipped
+2025-12-30 16:24:09,411 | INFO | document_ocr | [PAGE 70] Processing started
+2025-12-30 16:24:09,488 | INFO | document_ocr | [PAGE 70] text_confidence=1.0, images=4, tables=0
+2025-12-30 16:24:09,488 | INFO | document_ocr | [PAGE 70] OCR skipped
+2025-12-30 16:24:09,488 | INFO | document_ocr | [PAGE 71] Processing started
+2025-12-30 16:24:09,556 | INFO | document_ocr | [PAGE 71] text_confidence=1.0, images=8, tables=0
+2025-12-30 16:24:09,557 | INFO | document_ocr | [PAGE 71] OCR skipped
+2025-12-30 16:24:09,557 | INFO | document_ocr | [PAGE 72] Processing started
+2025-12-30 16:24:09,568 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P508' is an invalid float value
+2025-12-30 16:24:09,572 | INFO | document_ocr | [PAGE 72] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:09,572 | WARNING | document_ocr | [PAGE 72] OCR triggered
+2025-12-30 16:24:10,231 | INFO | document_ocr | [OCR] Page 72: OCR text extracted
+2025-12-30 16:24:10,231 | INFO | document_ocr | [PAGE 73] Processing started
+2025-12-30 16:24:10,296 | INFO | document_ocr | [PAGE 73] text_confidence=1.0, images=3, tables=2
+2025-12-30 16:24:10,296 | INFO | document_ocr | [PAGE 73] Tables extracted via pdfplumber
+2025-12-30 16:24:10,297 | INFO | document_ocr | [PAGE 73] OCR skipped
+2025-12-30 16:24:10,297 | INFO | document_ocr | [PAGE 74] Processing started
+2025-12-30 16:24:10,394 | INFO | document_ocr | [PAGE 74] text_confidence=1.0, images=1, tables=1
+2025-12-30 16:24:10,394 | INFO | document_ocr | [PAGE 74] Tables extracted via pdfplumber
+2025-12-30 16:24:10,395 | INFO | document_ocr | [PAGE 74] OCR skipped
+2025-12-30 16:24:10,395 | INFO | document_ocr | [PAGE 75] Processing started
+2025-12-30 16:24:10,458 | INFO | document_ocr | [PAGE 75] text_confidence=1.0, images=1, tables=1
+2025-12-30 16:24:10,459 | INFO | document_ocr | [PAGE 75] Tables extracted via pdfplumber
+2025-12-30 16:24:10,459 | INFO | document_ocr | [PAGE 75] OCR skipped
+2025-12-30 16:24:10,459 | INFO | document_ocr | [PAGE 76] Processing started
+2025-12-30 16:24:10,552 | INFO | document_ocr | [PAGE 76] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:10,552 | INFO | document_ocr | [PAGE 76] Tables extracted via pdfplumber
+2025-12-30 16:24:10,553 | INFO | document_ocr | [PAGE 76] OCR skipped
+2025-12-30 16:24:10,553 | INFO | document_ocr | [PAGE 77] Processing started
+2025-12-30 16:24:10,641 | INFO | document_ocr | [PAGE 77] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:10,642 | INFO | document_ocr | [PAGE 77] Tables extracted via pdfplumber
+2025-12-30 16:24:10,642 | INFO | document_ocr | [PAGE 77] OCR skipped
+2025-12-30 16:24:10,642 | INFO | document_ocr | [PAGE 78] Processing started
+2025-12-30 16:24:10,741 | INFO | document_ocr | [PAGE 78] text_confidence=1.0, images=0, tables=3
+2025-12-30 16:24:10,741 | INFO | document_ocr | [PAGE 78] Tables extracted via pdfplumber
+2025-12-30 16:24:10,741 | INFO | document_ocr | [PAGE 78] OCR skipped
+2025-12-30 16:24:10,742 | INFO | document_ocr | [PAGE 79] Processing started
+2025-12-30 16:24:10,817 | INFO | document_ocr | [PAGE 79] text_confidence=1.0, images=3, tables=1
+2025-12-30 16:24:10,817 | INFO | document_ocr | [PAGE 79] Tables extracted via pdfplumber
+2025-12-30 16:24:10,818 | INFO | document_ocr | [PAGE 79] OCR skipped
+2025-12-30 16:24:10,818 | INFO | document_ocr | [PAGE 80] Processing started
+2025-12-30 16:24:10,937 | INFO | document_ocr | [PAGE 80] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:24:10,937 | INFO | document_ocr | [PAGE 80] Tables extracted via pdfplumber
+2025-12-30 16:24:10,937 | INFO | document_ocr | [PAGE 80] OCR skipped
+2025-12-30 16:24:10,938 | INFO | document_ocr | [PAGE 81] Processing started
+2025-12-30 16:24:11,010 | INFO | document_ocr | [PAGE 81] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:11,010 | INFO | document_ocr | [PAGE 81] Tables extracted via pdfplumber
+2025-12-30 16:24:11,010 | INFO | document_ocr | [PAGE 81] OCR skipped
+2025-12-30 16:24:11,011 | INFO | document_ocr | [PAGE 82] Processing started
+2025-12-30 16:24:11,131 | INFO | document_ocr | [PAGE 82] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:11,132 | INFO | document_ocr | [PAGE 82] Tables extracted via pdfplumber
+2025-12-30 16:24:11,132 | INFO | document_ocr | [PAGE 82] OCR skipped
+2025-12-30 16:24:11,132 | INFO | document_ocr | [PAGE 83] Processing started
+2025-12-30 16:24:11,221 | INFO | document_ocr | [PAGE 83] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:24:11,221 | INFO | document_ocr | [PAGE 83] Tables extracted via pdfplumber
+2025-12-30 16:24:11,221 | INFO | document_ocr | [PAGE 83] OCR skipped
+2025-12-30 16:24:11,222 | INFO | document_ocr | [PAGE 84] Processing started
+2025-12-30 16:24:11,261 | INFO | document_ocr | [PAGE 84] text_confidence=0.8, images=0, tables=1
+2025-12-30 16:24:11,262 | INFO | document_ocr | [PAGE 84] Tables extracted via pdfplumber
+2025-12-30 16:24:11,262 | INFO | document_ocr | [PAGE 84] OCR skipped
+2025-12-30 16:24:11,262 | INFO | document_ocr | [PAGE 85] Processing started
+2025-12-30 16:24:11,357 | INFO | document_ocr | [PAGE 85] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:11,358 | INFO | document_ocr | [PAGE 85] Tables extracted via pdfplumber
+2025-12-30 16:24:11,358 | INFO | document_ocr | [PAGE 85] OCR skipped
+2025-12-30 16:24:11,358 | INFO | document_ocr | [PAGE 86] Processing started
+2025-12-30 16:24:11,444 | INFO | document_ocr | [PAGE 86] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:24:11,445 | INFO | document_ocr | [PAGE 86] Tables extracted via pdfplumber
+2025-12-30 16:24:11,445 | INFO | document_ocr | [PAGE 86] OCR skipped
+2025-12-30 16:24:11,445 | INFO | document_ocr | [PAGE 87] Processing started
+2025-12-30 16:24:11,535 | INFO | document_ocr | [PAGE 87] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:11,536 | INFO | document_ocr | [PAGE 87] Tables extracted via pdfplumber
+2025-12-30 16:24:11,536 | INFO | document_ocr | [PAGE 87] OCR skipped
+2025-12-30 16:24:11,536 | INFO | document_ocr | [PAGE 88] Processing started
+2025-12-30 16:24:11,635 | INFO | document_ocr | [PAGE 88] text_confidence=1.0, images=0, tables=5
+2025-12-30 16:24:11,635 | INFO | document_ocr | [PAGE 88] Tables extracted via pdfplumber
+2025-12-30 16:24:11,636 | INFO | document_ocr | [PAGE 88] OCR skipped
+2025-12-30 16:24:11,636 | INFO | document_ocr | [PAGE 89] Processing started
+2025-12-30 16:24:11,707 | INFO | document_ocr | [PAGE 89] text_confidence=1.0, images=1, tables=2
+2025-12-30 16:24:11,708 | INFO | document_ocr | [PAGE 89] Tables extracted via pdfplumber
+2025-12-30 16:24:11,708 | INFO | document_ocr | [PAGE 89] OCR skipped
+2025-12-30 16:24:11,708 | INFO | document_ocr | [PAGE 90] Processing started
+2025-12-30 16:24:11,770 | INFO | document_ocr | [PAGE 90] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:11,770 | INFO | document_ocr | [PAGE 90] Tables extracted via pdfplumber
+2025-12-30 16:24:11,770 | INFO | document_ocr | [PAGE 90] OCR skipped
+2025-12-30 16:24:11,770 | INFO | document_ocr | [PAGE 91] Processing started
+2025-12-30 16:24:12,167 | INFO | document_ocr | [PAGE 91] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:12,167 | INFO | document_ocr | [PAGE 91] Tables extracted via pdfplumber
+2025-12-30 16:24:12,167 | INFO | document_ocr | [PAGE 91] OCR skipped
+2025-12-30 16:24:12,167 | INFO | document_ocr | [PAGE 92] Processing started
+2025-12-30 16:24:12,185 | INFO | document_ocr | [PAGE 92] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:12,186 | WARNING | document_ocr | [PAGE 92] OCR triggered
+2025-12-30 16:24:13,422 | INFO | document_ocr | [OCR] Page 92: OCR text extracted
+2025-12-30 16:24:13,423 | INFO | document_ocr | [PAGE 93] Processing started
+2025-12-30 16:24:13,443 | INFO | document_ocr | [PAGE 93] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:13,443 | WARNING | document_ocr | [PAGE 93] OCR triggered
+2025-12-30 16:24:14,548 | INFO | document_ocr | [OCR] Page 93: OCR text extracted
+2025-12-30 16:24:14,548 | INFO | document_ocr | [PAGE 94] Processing started
+2025-12-30 16:24:14,613 | INFO | document_ocr | [PAGE 94] text_confidence=1.0, images=2, tables=1
+2025-12-30 16:24:14,614 | INFO | document_ocr | [PAGE 94] Tables extracted via pdfplumber
+2025-12-30 16:24:14,614 | INFO | document_ocr | [PAGE 94] OCR skipped
+2025-12-30 16:24:14,614 | INFO | document_ocr | [PAGE 95] Processing started
+2025-12-30 16:24:14,698 | INFO | document_ocr | [PAGE 95] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:24:14,698 | INFO | document_ocr | [PAGE 95] Tables extracted via pdfplumber
+2025-12-30 16:24:14,699 | INFO | document_ocr | [PAGE 95] OCR skipped
+2025-12-30 16:24:14,699 | INFO | document_ocr | [PAGE 96] Processing started
+2025-12-30 16:24:14,763 | INFO | document_ocr | [PAGE 96] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:14,763 | INFO | document_ocr | [PAGE 96] Tables extracted via pdfplumber
+2025-12-30 16:24:14,763 | INFO | document_ocr | [PAGE 96] OCR skipped
+2025-12-30 16:24:14,764 | INFO | document_ocr | [PAGE 97] Processing started
+2025-12-30 16:24:14,830 | INFO | document_ocr | [PAGE 97] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:14,830 | INFO | document_ocr | [PAGE 97] Tables extracted via pdfplumber
+2025-12-30 16:24:14,830 | INFO | document_ocr | [PAGE 97] OCR skipped
+2025-12-30 16:24:14,830 | INFO | document_ocr | [PAGE 98] Processing started
+2025-12-30 16:24:14,836 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P622' is an invalid float value
+2025-12-30 16:24:14,842 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P627' is an invalid float value
+2025-12-30 16:24:14,846 | INFO | document_ocr | [PAGE 98] text_confidence=0.4, images=1, tables=0
+2025-12-30 16:24:14,847 | WARNING | document_ocr | [PAGE 98] OCR triggered
+2025-12-30 16:24:15,504 | INFO | document_ocr | [OCR] Page 98: OCR text extracted
+2025-12-30 16:24:15,504 | INFO | document_ocr | [PAGE 99] Processing started
+2025-12-30 16:24:15,569 | INFO | document_ocr | [PAGE 99] text_confidence=1.0, images=2, tables=1
+2025-12-30 16:24:15,570 | INFO | document_ocr | [PAGE 99] Tables extracted via pdfplumber
+2025-12-30 16:24:15,570 | INFO | document_ocr | [PAGE 99] OCR skipped
+2025-12-30 16:24:15,570 | INFO | document_ocr | [PAGE 100] Processing started
+2025-12-30 16:24:15,658 | INFO | document_ocr | [PAGE 100] text_confidence=1.0, images=1, tables=2
+2025-12-30 16:24:15,658 | INFO | document_ocr | [PAGE 100] Tables extracted via pdfplumber
+2025-12-30 16:24:15,659 | INFO | document_ocr | [PAGE 100] OCR skipped
+2025-12-30 16:24:15,659 | INFO | document_ocr | [PAGE 101] Processing started
+2025-12-30 16:24:15,736 | INFO | document_ocr | [PAGE 101] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:15,736 | INFO | document_ocr | [PAGE 101] Tables extracted via pdfplumber
+2025-12-30 16:24:15,737 | INFO | document_ocr | [PAGE 101] OCR skipped
+2025-12-30 16:24:15,737 | INFO | document_ocr | [PAGE 102] Processing started
+2025-12-30 16:24:15,836 | INFO | document_ocr | [PAGE 102] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:15,837 | INFO | document_ocr | [PAGE 102] Tables extracted via pdfplumber
+2025-12-30 16:24:15,837 | INFO | document_ocr | [PAGE 102] OCR skipped
+2025-12-30 16:24:15,837 | INFO | document_ocr | [PAGE 103] Processing started
+2025-12-30 16:24:15,946 | INFO | document_ocr | [PAGE 103] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:15,947 | INFO | document_ocr | [PAGE 103] Tables extracted via pdfplumber
+2025-12-30 16:24:15,947 | INFO | document_ocr | [PAGE 103] OCR skipped
+2025-12-30 16:24:15,947 | INFO | document_ocr | [PAGE 104] Processing started
+2025-12-30 16:24:16,016 | INFO | document_ocr | [PAGE 104] text_confidence=1.0, images=4, tables=1
+2025-12-30 16:24:16,017 | INFO | document_ocr | [PAGE 104] Tables extracted via pdfplumber
+2025-12-30 16:24:16,017 | INFO | document_ocr | [PAGE 104] OCR skipped
+2025-12-30 16:24:16,017 | INFO | document_ocr | [PAGE 105] Processing started
+2025-12-30 16:24:16,047 | INFO | document_ocr | [PAGE 105] text_confidence=0.8, images=1, tables=1
+2025-12-30 16:24:16,047 | INFO | document_ocr | [PAGE 105] Tables extracted via pdfplumber
+2025-12-30 16:24:16,047 | INFO | document_ocr | [PAGE 105] OCR skipped
+2025-12-30 16:24:16,047 | INFO | document_ocr | [PAGE 106] Processing started
+2025-12-30 16:24:16,133 | INFO | document_ocr | [PAGE 106] text_confidence=1.0, images=0, tables=2
+2025-12-30 16:24:16,134 | INFO | document_ocr | [PAGE 106] Tables extracted via pdfplumber
+2025-12-30 16:24:16,134 | INFO | document_ocr | [PAGE 106] OCR skipped
+2025-12-30 16:24:16,134 | INFO | document_ocr | [PAGE 107] Processing started
+2025-12-30 16:24:16,185 | INFO | document_ocr | [PAGE 107] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:16,185 | INFO | document_ocr | [PAGE 107] Tables extracted via pdfplumber
+2025-12-30 16:24:16,186 | INFO | document_ocr | [PAGE 107] OCR skipped
+2025-12-30 16:24:16,186 | INFO | document_ocr | [PAGE 108] Processing started
+2025-12-30 16:24:16,279 | INFO | document_ocr | [PAGE 108] text_confidence=1.0, images=3, tables=2
+2025-12-30 16:24:16,279 | INFO | document_ocr | [PAGE 108] Tables extracted via pdfplumber
+2025-12-30 16:24:16,279 | INFO | document_ocr | [PAGE 108] OCR skipped
+2025-12-30 16:24:16,280 | INFO | document_ocr | [PAGE 109] Processing started
+2025-12-30 16:24:16,350 | INFO | document_ocr | [PAGE 109] text_confidence=1.0, images=0, tables=1
+2025-12-30 16:24:16,350 | INFO | document_ocr | [PAGE 109] Tables extracted via pdfplumber
+2025-12-30 16:24:16,350 | INFO | document_ocr | [PAGE 109] OCR skipped
+2025-12-30 16:24:16,350 | INFO | document_ocr | [PAGE 110] Processing started
+2025-12-30 16:24:16,599 | INFO | document_ocr | [PAGE 110] text_confidence=0.4, images=0, tables=0
+2025-12-30 16:24:16,599 | INFO | document_ocr | [PAGE 110] OCR skipped
+2025-12-30 16:24:16,600 | INFO | document_ocr | [PAGE 111] Processing started
+2025-12-30 16:24:16,720 | INFO | document_ocr | [PAGE 111] text_confidence=1.0, images=0, tables=0
+2025-12-30 16:24:16,721 | INFO | document_ocr | [PAGE 111] OCR skipped
+2025-12-30 16:24:16,721 | INFO | document_ocr | [PAGE 112] Processing started
+2025-12-30 16:24:16,795 | INFO | document_ocr | [PAGE 112] text_confidence=1.0, images=0, tables=0
+2025-12-30 16:24:16,796 | INFO | document_ocr | [PAGE 112] OCR skipped
+2025-12-30 16:24:19,671 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:20,819 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:21,324 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:22,246 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:23,553 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:24,788 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:25,704 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:26,733 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:28,058 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:29,295 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:30,619 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:32,053 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:32,780 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:33,203 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:33,808 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:34,730 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:35,947 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:37,074 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:38,196 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:39,965 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:41,585 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:42,948 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:44,443 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:45,876 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:47,310 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:24:48,948 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:26:35,551 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:26:35,645 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-30 16:26:38,116 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-30 16:28:33,730 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:28:33,795 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-30 16:28:38,977 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-30 16:56:33,345 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-30 16:56:45,727 | INFO | document_ocr | [PAGE 1/112] Processing
+2025-12-30 16:56:45,900 | INFO | document_ocr | [PAGE 1] confidence=0.4, images=2, tables=0
+2025-12-30 16:56:45,900 | WARNING | document_ocr | [PAGE 1] OCR triggered
+2025-12-30 16:56:47,230 | INFO | document_ocr | [OCR] Page 1: OCR text extracted
+2025-12-30 16:56:47,230 | INFO | document_ocr | [PAGE 2/112] Processing
+2025-12-30 16:56:47,288 | INFO | document_ocr | [PAGE 2] confidence=1.0, images=1, tables=0
+2025-12-30 16:56:47,288 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 16:56:47,288 | INFO | document_ocr | [PAGE 3/112] Processing
+2025-12-30 16:56:47,319 | INFO | document_ocr | [PAGE 3] confidence=0.8, images=0, tables=0
+2025-12-30 16:56:47,319 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 16:56:47,319 | INFO | document_ocr | [PAGE 4/112] Processing
+2025-12-30 16:56:47,378 | INFO | document_ocr | [PAGE 4] confidence=1.0, images=0, tables=0
+2025-12-30 16:56:47,378 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 16:56:47,378 | INFO | document_ocr | [PAGE 5/112] Processing
+2025-12-30 16:56:47,484 | INFO | document_ocr | [PAGE 5] confidence=0.8, images=0, tables=0
+2025-12-30 16:56:47,484 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 16:56:47,485 | INFO | document_ocr | [PAGE 6/112] Processing
+2025-12-30 16:56:47,997 | INFO | document_ocr | [PAGE 6] confidence=0.8, images=0, tables=0
+2025-12-30 16:56:47,997 | INFO | document_ocr | [PAGE 6] OCR skipped
+2025-12-30 16:56:47,997 | INFO | document_ocr | [PAGE 7/112] Processing
+2025-12-30 16:56:48,001 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P105' is an invalid float value
+2025-12-30 16:56:48,005 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P110' is an invalid float value
+2025-12-30 16:56:48,012 | INFO | document_ocr | [PAGE 7] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:48,013 | WARNING | document_ocr | [PAGE 7] OCR triggered
+2025-12-30 16:56:49,068 | INFO | document_ocr | [OCR] Page 7: OCR text extracted
+2025-12-30 16:56:49,068 | INFO | document_ocr | [PAGE 8/112] Processing
+2025-12-30 16:56:49,175 | INFO | document_ocr | [PAGE 8] confidence=1.0, images=4, tables=2
+2025-12-30 16:56:49,175 | INFO | document_ocr | [PAGE 8] Tables extracted
+2025-12-30 16:56:49,176 | INFO | document_ocr | [PAGE 8] OCR skipped
+2025-12-30 16:56:49,176 | INFO | document_ocr | [PAGE 9/112] Processing
+2025-12-30 16:56:49,285 | INFO | document_ocr | [PAGE 9] confidence=1.0, images=10, tables=3
+2025-12-30 16:56:49,285 | INFO | document_ocr | [PAGE 9] Tables extracted
+2025-12-30 16:56:49,286 | INFO | document_ocr | [PAGE 9] OCR skipped
+2025-12-30 16:56:49,286 | INFO | document_ocr | [PAGE 10/112] Processing
+2025-12-30 16:56:49,424 | INFO | document_ocr | [PAGE 10] confidence=1.0, images=0, tables=4
+2025-12-30 16:56:49,424 | INFO | document_ocr | [PAGE 10] Tables extracted
+2025-12-30 16:56:49,425 | INFO | document_ocr | [PAGE 10] OCR skipped
+2025-12-30 16:56:49,425 | INFO | document_ocr | [PAGE 11/112] Processing
+2025-12-30 16:56:49,513 | INFO | document_ocr | [PAGE 11] confidence=1.0, images=0, tables=2
+2025-12-30 16:56:49,513 | INFO | document_ocr | [PAGE 11] Tables extracted
+2025-12-30 16:56:49,514 | INFO | document_ocr | [PAGE 11] OCR skipped
+2025-12-30 16:56:49,514 | INFO | document_ocr | [PAGE 12/112] Processing
+2025-12-30 16:56:49,584 | INFO | document_ocr | [PAGE 12] confidence=1.0, images=3, tables=2
+2025-12-30 16:56:49,584 | INFO | document_ocr | [PAGE 12] Tables extracted
+2025-12-30 16:56:49,584 | INFO | document_ocr | [PAGE 12] OCR skipped
+2025-12-30 16:56:49,585 | INFO | document_ocr | [PAGE 13/112] Processing
+2025-12-30 16:56:49,691 | INFO | document_ocr | [PAGE 13] confidence=1.0, images=2, tables=2
+2025-12-30 16:56:49,692 | INFO | document_ocr | [PAGE 13] Tables extracted
+2025-12-30 16:56:49,692 | INFO | document_ocr | [PAGE 13] OCR skipped
+2025-12-30 16:56:49,692 | INFO | document_ocr | [PAGE 14/112] Processing
+2025-12-30 16:56:49,765 | INFO | document_ocr | [PAGE 14] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:49,765 | INFO | document_ocr | [PAGE 14] Tables extracted
+2025-12-30 16:56:49,765 | INFO | document_ocr | [PAGE 14] OCR skipped
+2025-12-30 16:56:49,765 | INFO | document_ocr | [PAGE 15/112] Processing
+2025-12-30 16:56:49,863 | INFO | document_ocr | [PAGE 15] confidence=1.0, images=0, tables=3
+2025-12-30 16:56:49,864 | INFO | document_ocr | [PAGE 15] Tables extracted
+2025-12-30 16:56:49,864 | INFO | document_ocr | [PAGE 15] OCR skipped
+2025-12-30 16:56:49,864 | INFO | document_ocr | [PAGE 16/112] Processing
+2025-12-30 16:56:49,973 | INFO | document_ocr | [PAGE 16] confidence=1.0, images=0, tables=3
+2025-12-30 16:56:49,974 | INFO | document_ocr | [PAGE 16] Tables extracted
+2025-12-30 16:56:49,974 | INFO | document_ocr | [PAGE 16] OCR skipped
+2025-12-30 16:56:49,974 | INFO | document_ocr | [PAGE 17/112] Processing
+2025-12-30 16:56:50,081 | INFO | document_ocr | [PAGE 17] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:50,081 | INFO | document_ocr | [PAGE 17] Tables extracted
+2025-12-30 16:56:50,081 | INFO | document_ocr | [PAGE 17] OCR skipped
+2025-12-30 16:56:50,082 | INFO | document_ocr | [PAGE 18/112] Processing
+2025-12-30 16:56:50,139 | INFO | document_ocr | [PAGE 18] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:50,139 | INFO | document_ocr | [PAGE 18] Tables extracted
+2025-12-30 16:56:50,139 | INFO | document_ocr | [PAGE 18] OCR skipped
+2025-12-30 16:56:50,140 | INFO | document_ocr | [PAGE 19/112] Processing
+2025-12-30 16:56:50,225 | INFO | document_ocr | [PAGE 19] confidence=1.0, images=0, tables=2
+2025-12-30 16:56:50,225 | INFO | document_ocr | [PAGE 19] Tables extracted
+2025-12-30 16:56:50,226 | INFO | document_ocr | [PAGE 19] OCR skipped
+2025-12-30 16:56:50,226 | INFO | document_ocr | [PAGE 20/112] Processing
+2025-12-30 16:56:50,380 | INFO | document_ocr | [PAGE 20] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:50,380 | INFO | document_ocr | [PAGE 20] Tables extracted
+2025-12-30 16:56:50,381 | INFO | document_ocr | [PAGE 20] OCR skipped
+2025-12-30 16:56:50,381 | INFO | document_ocr | [PAGE 21/112] Processing
+2025-12-30 16:56:50,504 | INFO | document_ocr | [PAGE 21] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:50,505 | INFO | document_ocr | [PAGE 21] Tables extracted
+2025-12-30 16:56:50,505 | INFO | document_ocr | [PAGE 21] OCR skipped
+2025-12-30 16:56:50,505 | INFO | document_ocr | [PAGE 22/112] Processing
+2025-12-30 16:56:50,659 | INFO | document_ocr | [PAGE 22] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:50,659 | INFO | document_ocr | [PAGE 22] Tables extracted
+2025-12-30 16:56:50,659 | INFO | document_ocr | [PAGE 22] OCR skipped
+2025-12-30 16:56:50,659 | INFO | document_ocr | [PAGE 23/112] Processing
+2025-12-30 16:56:50,670 | INFO | document_ocr | [PAGE 23] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:50,670 | WARNING | document_ocr | [PAGE 23] OCR triggered
+2025-12-30 16:56:51,638 | INFO | document_ocr | [OCR] Page 23: OCR text extracted
+2025-12-30 16:56:51,638 | INFO | document_ocr | [PAGE 24/112] Processing
+2025-12-30 16:56:51,789 | INFO | document_ocr | [PAGE 24] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:51,789 | WARNING | document_ocr | [PAGE 24] OCR triggered
+2025-12-30 16:56:53,144 | INFO | document_ocr | [OCR] Page 24: OCR text extracted
+2025-12-30 16:56:53,144 | INFO | document_ocr | [PAGE 25/112] Processing
+2025-12-30 16:56:53,281 | INFO | document_ocr | [PAGE 25] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:53,282 | INFO | document_ocr | [PAGE 25] Tables extracted
+2025-12-30 16:56:53,282 | INFO | document_ocr | [PAGE 25] OCR skipped
+2025-12-30 16:56:53,282 | INFO | document_ocr | [PAGE 26/112] Processing
+2025-12-30 16:56:53,382 | INFO | document_ocr | [PAGE 26] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:53,382 | INFO | document_ocr | [PAGE 26] Tables extracted
+2025-12-30 16:56:53,383 | INFO | document_ocr | [PAGE 26] OCR skipped
+2025-12-30 16:56:53,384 | INFO | document_ocr | [PAGE 27/112] Processing
+2025-12-30 16:56:53,472 | INFO | document_ocr | [PAGE 27] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:53,473 | INFO | document_ocr | [PAGE 27] Tables extracted
+2025-12-30 16:56:53,473 | INFO | document_ocr | [PAGE 27] OCR skipped
+2025-12-30 16:56:53,473 | INFO | document_ocr | [PAGE 28/112] Processing
+2025-12-30 16:56:53,539 | INFO | document_ocr | [PAGE 28] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:53,540 | INFO | document_ocr | [PAGE 28] Tables extracted
+2025-12-30 16:56:53,540 | INFO | document_ocr | [PAGE 28] OCR skipped
+2025-12-30 16:56:53,540 | INFO | document_ocr | [PAGE 29/112] Processing
+2025-12-30 16:56:53,549 | INFO | document_ocr | [PAGE 29] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:53,549 | WARNING | document_ocr | [PAGE 29] OCR triggered
+2025-12-30 16:56:54,501 | INFO | document_ocr | [OCR] Page 29: OCR text extracted
+2025-12-30 16:56:54,501 | INFO | document_ocr | [PAGE 30/112] Processing
+2025-12-30 16:56:54,576 | INFO | document_ocr | [PAGE 30] confidence=1.0, images=4, tables=2
+2025-12-30 16:56:54,576 | INFO | document_ocr | [PAGE 30] Tables extracted
+2025-12-30 16:56:54,577 | INFO | document_ocr | [PAGE 30] OCR skipped
+2025-12-30 16:56:54,577 | INFO | document_ocr | [PAGE 31/112] Processing
+2025-12-30 16:56:54,670 | INFO | document_ocr | [PAGE 31] confidence=1.0, images=0, tables=2
+2025-12-30 16:56:54,671 | INFO | document_ocr | [PAGE 31] Tables extracted
+2025-12-30 16:56:54,671 | INFO | document_ocr | [PAGE 31] OCR skipped
+2025-12-30 16:56:54,671 | INFO | document_ocr | [PAGE 32/112] Processing
+2025-12-30 16:56:54,729 | INFO | document_ocr | [PAGE 32] confidence=1.0, images=4, tables=2
+2025-12-30 16:56:54,729 | INFO | document_ocr | [PAGE 32] Tables extracted
+2025-12-30 16:56:54,729 | INFO | document_ocr | [PAGE 32] OCR skipped
+2025-12-30 16:56:54,730 | INFO | document_ocr | [PAGE 33/112] Processing
+2025-12-30 16:56:54,827 | INFO | document_ocr | [PAGE 33] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:54,828 | INFO | document_ocr | [PAGE 33] Tables extracted
+2025-12-30 16:56:54,828 | INFO | document_ocr | [PAGE 33] OCR skipped
+2025-12-30 16:56:54,828 | INFO | document_ocr | [PAGE 34/112] Processing
+2025-12-30 16:56:54,914 | INFO | document_ocr | [PAGE 34] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:54,914 | INFO | document_ocr | [PAGE 34] Tables extracted
+2025-12-30 16:56:54,914 | INFO | document_ocr | [PAGE 34] OCR skipped
+2025-12-30 16:56:54,915 | INFO | document_ocr | [PAGE 35/112] Processing
+2025-12-30 16:56:55,017 | INFO | document_ocr | [PAGE 35] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:55,017 | INFO | document_ocr | [PAGE 35] Tables extracted
+2025-12-30 16:56:55,017 | INFO | document_ocr | [PAGE 35] OCR skipped
+2025-12-30 16:56:55,018 | INFO | document_ocr | [PAGE 36/112] Processing
+2025-12-30 16:56:55,106 | INFO | document_ocr | [PAGE 36] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:55,107 | INFO | document_ocr | [PAGE 36] Tables extracted
+2025-12-30 16:56:55,107 | INFO | document_ocr | [PAGE 36] OCR skipped
+2025-12-30 16:56:55,108 | INFO | document_ocr | [PAGE 37/112] Processing
+2025-12-30 16:56:55,180 | INFO | document_ocr | [PAGE 37] confidence=1.0, images=0, tables=2
+2025-12-30 16:56:55,180 | INFO | document_ocr | [PAGE 37] Tables extracted
+2025-12-30 16:56:55,180 | INFO | document_ocr | [PAGE 37] OCR skipped
+2025-12-30 16:56:55,180 | INFO | document_ocr | [PAGE 38/112] Processing
+2025-12-30 16:56:55,258 | INFO | document_ocr | [PAGE 38] confidence=1.0, images=2, tables=1
+2025-12-30 16:56:55,258 | INFO | document_ocr | [PAGE 38] Tables extracted
+2025-12-30 16:56:55,258 | INFO | document_ocr | [PAGE 38] OCR skipped
+2025-12-30 16:56:55,258 | INFO | document_ocr | [PAGE 39/112] Processing
+2025-12-30 16:56:55,347 | INFO | document_ocr | [PAGE 39] confidence=1.0, images=0, tables=1
+2025-12-30 16:56:55,347 | INFO | document_ocr | [PAGE 39] Tables extracted
+2025-12-30 16:56:55,348 | INFO | document_ocr | [PAGE 39] OCR skipped
+2025-12-30 16:56:55,348 | INFO | document_ocr | [PAGE 40/112] Processing
+2025-12-30 16:56:55,418 | INFO | document_ocr | [PAGE 40] confidence=1.0, images=0, tables=2
+2025-12-30 16:56:55,418 | INFO | document_ocr | [PAGE 40] Tables extracted
+2025-12-30 16:56:55,419 | INFO | document_ocr | [PAGE 40] OCR skipped
+2025-12-30 16:56:55,419 | INFO | document_ocr | [PAGE 41/112] Processing
+2025-12-30 16:56:55,469 | INFO | document_ocr | [PAGE 41] confidence=0.8, images=6, tables=1
+2025-12-30 16:56:55,469 | INFO | document_ocr | [PAGE 41] Tables extracted
+2025-12-30 16:56:55,469 | INFO | document_ocr | [PAGE 41] OCR skipped
+2025-12-30 16:56:55,469 | INFO | document_ocr | [PAGE 42/112] Processing
+2025-12-30 16:56:55,483 | INFO | document_ocr | [PAGE 42] confidence=0.4, images=0, tables=0
+2025-12-30 16:56:55,483 | INFO | document_ocr | [PAGE 42] OCR skipped
+2025-12-30 16:56:55,483 | INFO | document_ocr | [PAGE 43/112] Processing
+2025-12-30 16:56:55,491 | INFO | document_ocr | [PAGE 43] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:55,491 | WARNING | document_ocr | [PAGE 43] OCR triggered
+2025-12-30 16:56:57,193 | INFO | document_ocr | [OCR] Page 43: OCR text extracted
+2025-12-30 16:56:57,194 | INFO | document_ocr | [PAGE 44/112] Processing
+2025-12-30 16:56:57,200 | INFO | document_ocr | [PAGE 44] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:57,201 | WARNING | document_ocr | [PAGE 44] OCR triggered
+2025-12-30 16:56:58,791 | INFO | document_ocr | [OCR] Page 44: OCR text extracted
+2025-12-30 16:56:58,792 | INFO | document_ocr | [PAGE 45/112] Processing
+2025-12-30 16:56:58,798 | INFO | document_ocr | [PAGE 45] confidence=0.4, images=1, tables=0
+2025-12-30 16:56:58,798 | WARNING | document_ocr | [PAGE 45] OCR triggered
+2025-12-30 16:57:00,166 | INFO | document_ocr | [OCR] Page 45: OCR text extracted
+2025-12-30 16:57:00,167 | INFO | document_ocr | [PAGE 46/112] Processing
+2025-12-30 16:57:00,174 | INFO | document_ocr | [PAGE 46] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:00,174 | WARNING | document_ocr | [PAGE 46] OCR triggered
+2025-12-30 16:57:01,797 | INFO | document_ocr | [OCR] Page 46: OCR text extracted
+2025-12-30 16:57:01,797 | INFO | document_ocr | [PAGE 47/112] Processing
+2025-12-30 16:57:01,810 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P333' is an invalid float value
+2025-12-30 16:57:01,814 | INFO | document_ocr | [PAGE 47] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:01,815 | WARNING | document_ocr | [PAGE 47] OCR triggered
+2025-12-30 16:57:02,803 | INFO | document_ocr | [OCR] Page 47: OCR text extracted
+2025-12-30 16:57:02,803 | INFO | document_ocr | [PAGE 48/112] Processing
+2025-12-30 16:57:02,876 | INFO | document_ocr | [PAGE 48] confidence=1.0, images=6, tables=2
+2025-12-30 16:57:02,877 | INFO | document_ocr | [PAGE 48] Tables extracted
+2025-12-30 16:57:02,877 | INFO | document_ocr | [PAGE 48] OCR skipped
+2025-12-30 16:57:02,877 | INFO | document_ocr | [PAGE 49/112] Processing
+2025-12-30 16:57:02,957 | INFO | document_ocr | [PAGE 49] confidence=1.0, images=2, tables=2
+2025-12-30 16:57:02,957 | INFO | document_ocr | [PAGE 49] Tables extracted
+2025-12-30 16:57:02,957 | INFO | document_ocr | [PAGE 49] OCR skipped
+2025-12-30 16:57:02,958 | INFO | document_ocr | [PAGE 50/112] Processing
+2025-12-30 16:57:03,375 | INFO | document_ocr | [PAGE 50] confidence=1.0, images=6, tables=2
+2025-12-30 16:57:03,375 | INFO | document_ocr | [PAGE 50] Tables extracted
+2025-12-30 16:57:03,376 | INFO | document_ocr | [PAGE 50] OCR skipped
+2025-12-30 16:57:03,376 | INFO | document_ocr | [PAGE 51/112] Processing
+2025-12-30 16:57:03,430 | INFO | document_ocr | [PAGE 51] confidence=1.0, images=4, tables=2
+2025-12-30 16:57:03,431 | INFO | document_ocr | [PAGE 51] Tables extracted
+2025-12-30 16:57:03,431 | INFO | document_ocr | [PAGE 51] OCR skipped
+2025-12-30 16:57:03,431 | INFO | document_ocr | [PAGE 52/112] Processing
+2025-12-30 16:57:03,516 | INFO | document_ocr | [PAGE 52] confidence=1.0, images=2, tables=2
+2025-12-30 16:57:03,517 | INFO | document_ocr | [PAGE 52] Tables extracted
+2025-12-30 16:57:03,517 | INFO | document_ocr | [PAGE 52] OCR skipped
+2025-12-30 16:57:03,517 | INFO | document_ocr | [PAGE 53/112] Processing
+2025-12-30 16:57:03,573 | INFO | document_ocr | [PAGE 53] confidence=1.0, images=3, tables=2
+2025-12-30 16:57:03,573 | INFO | document_ocr | [PAGE 53] Tables extracted
+2025-12-30 16:57:03,574 | INFO | document_ocr | [PAGE 53] OCR skipped
+2025-12-30 16:57:03,574 | INFO | document_ocr | [PAGE 54/112] Processing
+2025-12-30 16:57:03,580 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P381' is an invalid float value
+2025-12-30 16:57:03,586 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P386' is an invalid float value
+2025-12-30 16:57:03,590 | INFO | document_ocr | [PAGE 54] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:03,590 | WARNING | document_ocr | [PAGE 54] OCR triggered
+2025-12-30 16:57:04,596 | INFO | document_ocr | [OCR] Page 54: OCR text extracted
+2025-12-30 16:57:04,596 | INFO | document_ocr | [PAGE 55/112] Processing
+2025-12-30 16:57:04,649 | INFO | document_ocr | [PAGE 55] confidence=1.0, images=4, tables=2
+2025-12-30 16:57:04,649 | INFO | document_ocr | [PAGE 55] Tables extracted
+2025-12-30 16:57:04,649 | INFO | document_ocr | [PAGE 55] OCR skipped
+2025-12-30 16:57:04,650 | INFO | document_ocr | [PAGE 56/112] Processing
+2025-12-30 16:57:04,713 | INFO | document_ocr | [PAGE 56] confidence=1.0, images=5, tables=2
+2025-12-30 16:57:04,714 | INFO | document_ocr | [PAGE 56] Tables extracted
+2025-12-30 16:57:04,714 | INFO | document_ocr | [PAGE 56] OCR skipped
+2025-12-30 16:57:04,714 | INFO | document_ocr | [PAGE 57/112] Processing
+2025-12-30 16:57:04,765 | INFO | document_ocr | [PAGE 57] confidence=1.0, images=2, tables=2
+2025-12-30 16:57:04,765 | INFO | document_ocr | [PAGE 57] Tables extracted
+2025-12-30 16:57:04,765 | INFO | document_ocr | [PAGE 57] OCR skipped
+2025-12-30 16:57:04,765 | INFO | document_ocr | [PAGE 58/112] Processing
+2025-12-30 16:57:04,823 | INFO | document_ocr | [PAGE 58] confidence=0.8, images=2, tables=2
+2025-12-30 16:57:04,823 | INFO | document_ocr | [PAGE 58] Tables extracted
+2025-12-30 16:57:04,824 | INFO | document_ocr | [PAGE 58] OCR skipped
+2025-12-30 16:57:04,824 | INFO | document_ocr | [PAGE 59/112] Processing
+2025-12-30 16:57:04,882 | INFO | document_ocr | [PAGE 59] confidence=1.0, images=4, tables=2
+2025-12-30 16:57:04,883 | INFO | document_ocr | [PAGE 59] Tables extracted
+2025-12-30 16:57:04,883 | INFO | document_ocr | [PAGE 59] OCR skipped
+2025-12-30 16:57:04,883 | INFO | document_ocr | [PAGE 60/112] Processing
+2025-12-30 16:57:04,932 | INFO | document_ocr | [PAGE 60] confidence=1.0, images=2, tables=1
+2025-12-30 16:57:04,933 | INFO | document_ocr | [PAGE 60] Tables extracted
+2025-12-30 16:57:04,933 | INFO | document_ocr | [PAGE 60] OCR skipped
+2025-12-30 16:57:04,933 | INFO | document_ocr | [PAGE 61/112] Processing
+2025-12-30 16:57:04,987 | INFO | document_ocr | [PAGE 61] confidence=1.0, images=3, tables=3
+2025-12-30 16:57:04,988 | INFO | document_ocr | [PAGE 61] Tables extracted
+2025-12-30 16:57:04,988 | INFO | document_ocr | [PAGE 61] OCR skipped
+2025-12-30 16:57:04,988 | INFO | document_ocr | [PAGE 62/112] Processing
+2025-12-30 16:57:05,048 | INFO | document_ocr | [PAGE 62] confidence=1.0, images=2, tables=1
+2025-12-30 16:57:05,048 | INFO | document_ocr | [PAGE 62] Tables extracted
+2025-12-30 16:57:05,048 | INFO | document_ocr | [PAGE 62] OCR skipped
+2025-12-30 16:57:05,048 | INFO | document_ocr | [PAGE 63/112] Processing
+2025-12-30 16:57:05,141 | INFO | document_ocr | [PAGE 63] confidence=1.0, images=4, tables=2
+2025-12-30 16:57:05,141 | INFO | document_ocr | [PAGE 63] Tables extracted
+2025-12-30 16:57:05,142 | INFO | document_ocr | [PAGE 63] OCR skipped
+2025-12-30 16:57:05,142 | INFO | document_ocr | [PAGE 64/112] Processing
+2025-12-30 16:57:05,153 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P446' is an invalid float value
+2025-12-30 16:57:05,157 | INFO | document_ocr | [PAGE 64] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:05,157 | WARNING | document_ocr | [PAGE 64] OCR triggered
+2025-12-30 16:57:06,124 | INFO | document_ocr | [OCR] Page 64: OCR text extracted
+2025-12-30 16:57:06,125 | INFO | document_ocr | [PAGE 65/112] Processing
+2025-12-30 16:57:06,226 | INFO | document_ocr | [PAGE 65] confidence=1.0, images=4, tables=2
+2025-12-30 16:57:06,227 | INFO | document_ocr | [PAGE 65] Tables extracted
+2025-12-30 16:57:06,227 | INFO | document_ocr | [PAGE 65] OCR skipped
+2025-12-30 16:57:06,227 | INFO | document_ocr | [PAGE 66/112] Processing
+2025-12-30 16:57:06,276 | INFO | document_ocr | [PAGE 66] confidence=1.0, images=7, tables=1
+2025-12-30 16:57:06,276 | INFO | document_ocr | [PAGE 66] Tables extracted
+2025-12-30 16:57:06,277 | INFO | document_ocr | [PAGE 66] OCR skipped
+2025-12-30 16:57:06,277 | INFO | document_ocr | [PAGE 67/112] Processing
+2025-12-30 16:57:06,317 | INFO | document_ocr | [PAGE 67] confidence=1.0, images=0, tables=0
+2025-12-30 16:57:06,317 | INFO | document_ocr | [PAGE 67] OCR skipped
+2025-12-30 16:57:06,317 | INFO | document_ocr | [PAGE 68/112] Processing
+2025-12-30 16:57:06,375 | INFO | document_ocr | [PAGE 68] confidence=1.0, images=4, tables=1
+2025-12-30 16:57:06,376 | INFO | document_ocr | [PAGE 68] Tables extracted
+2025-12-30 16:57:06,376 | INFO | document_ocr | [PAGE 68] OCR skipped
+2025-12-30 16:57:06,376 | INFO | document_ocr | [PAGE 69/112] Processing
+2025-12-30 16:57:06,420 | INFO | document_ocr | [PAGE 69] confidence=1.0, images=1, tables=1
+2025-12-30 16:57:06,420 | INFO | document_ocr | [PAGE 69] Tables extracted
+2025-12-30 16:57:06,420 | INFO | document_ocr | [PAGE 69] OCR skipped
+2025-12-30 16:57:06,421 | INFO | document_ocr | [PAGE 70/112] Processing
+2025-12-30 16:57:06,503 | INFO | document_ocr | [PAGE 70] confidence=1.0, images=4, tables=0
+2025-12-30 16:57:06,504 | INFO | document_ocr | [PAGE 70] OCR skipped
+2025-12-30 16:57:06,504 | INFO | document_ocr | [PAGE 71/112] Processing
+2025-12-30 16:57:06,567 | INFO | document_ocr | [PAGE 71] confidence=1.0, images=8, tables=0
+2025-12-30 16:57:06,568 | INFO | document_ocr | [PAGE 71] OCR skipped
+2025-12-30 16:57:06,568 | INFO | document_ocr | [PAGE 72/112] Processing
+2025-12-30 16:57:06,579 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P508' is an invalid float value
+2025-12-30 16:57:06,583 | INFO | document_ocr | [PAGE 72] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:06,584 | WARNING | document_ocr | [PAGE 72] OCR triggered
+2025-12-30 16:57:07,565 | INFO | document_ocr | [OCR] Page 72: OCR text extracted
+2025-12-30 16:57:07,565 | INFO | document_ocr | [PAGE 73/112] Processing
+2025-12-30 16:57:07,640 | INFO | document_ocr | [PAGE 73] confidence=1.0, images=3, tables=2
+2025-12-30 16:57:07,640 | INFO | document_ocr | [PAGE 73] Tables extracted
+2025-12-30 16:57:07,640 | INFO | document_ocr | [PAGE 73] OCR skipped
+2025-12-30 16:57:07,640 | INFO | document_ocr | [PAGE 74/112] Processing
+2025-12-30 16:57:07,726 | INFO | document_ocr | [PAGE 74] confidence=1.0, images=1, tables=1
+2025-12-30 16:57:07,726 | INFO | document_ocr | [PAGE 74] Tables extracted
+2025-12-30 16:57:07,726 | INFO | document_ocr | [PAGE 74] OCR skipped
+2025-12-30 16:57:07,727 | INFO | document_ocr | [PAGE 75/112] Processing
+2025-12-30 16:57:07,777 | INFO | document_ocr | [PAGE 75] confidence=1.0, images=1, tables=1
+2025-12-30 16:57:07,777 | INFO | document_ocr | [PAGE 75] Tables extracted
+2025-12-30 16:57:07,777 | INFO | document_ocr | [PAGE 75] OCR skipped
+2025-12-30 16:57:07,777 | INFO | document_ocr | [PAGE 76/112] Processing
+2025-12-30 16:57:07,869 | INFO | document_ocr | [PAGE 76] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:07,869 | INFO | document_ocr | [PAGE 76] Tables extracted
+2025-12-30 16:57:07,869 | INFO | document_ocr | [PAGE 76] OCR skipped
+2025-12-30 16:57:07,870 | INFO | document_ocr | [PAGE 77/112] Processing
+2025-12-30 16:57:07,956 | INFO | document_ocr | [PAGE 77] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:07,957 | INFO | document_ocr | [PAGE 77] Tables extracted
+2025-12-30 16:57:07,957 | INFO | document_ocr | [PAGE 77] OCR skipped
+2025-12-30 16:57:07,957 | INFO | document_ocr | [PAGE 78/112] Processing
+2025-12-30 16:57:08,056 | INFO | document_ocr | [PAGE 78] confidence=1.0, images=0, tables=3
+2025-12-30 16:57:08,056 | INFO | document_ocr | [PAGE 78] Tables extracted
+2025-12-30 16:57:08,056 | INFO | document_ocr | [PAGE 78] OCR skipped
+2025-12-30 16:57:08,056 | INFO | document_ocr | [PAGE 79/112] Processing
+2025-12-30 16:57:08,162 | INFO | document_ocr | [PAGE 79] confidence=1.0, images=3, tables=1
+2025-12-30 16:57:08,163 | INFO | document_ocr | [PAGE 79] Tables extracted
+2025-12-30 16:57:08,163 | INFO | document_ocr | [PAGE 79] OCR skipped
+2025-12-30 16:57:08,163 | INFO | document_ocr | [PAGE 80/112] Processing
+2025-12-30 16:57:08,284 | INFO | document_ocr | [PAGE 80] confidence=1.0, images=0, tables=2
+2025-12-30 16:57:08,284 | INFO | document_ocr | [PAGE 80] Tables extracted
+2025-12-30 16:57:08,285 | INFO | document_ocr | [PAGE 80] OCR skipped
+2025-12-30 16:57:08,285 | INFO | document_ocr | [PAGE 81/112] Processing
+2025-12-30 16:57:08,382 | INFO | document_ocr | [PAGE 81] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:08,382 | INFO | document_ocr | [PAGE 81] Tables extracted
+2025-12-30 16:57:08,383 | INFO | document_ocr | [PAGE 81] OCR skipped
+2025-12-30 16:57:08,383 | INFO | document_ocr | [PAGE 82/112] Processing
+2025-12-30 16:57:08,510 | INFO | document_ocr | [PAGE 82] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:08,511 | INFO | document_ocr | [PAGE 82] Tables extracted
+2025-12-30 16:57:08,511 | INFO | document_ocr | [PAGE 82] OCR skipped
+2025-12-30 16:57:08,511 | INFO | document_ocr | [PAGE 83/112] Processing
+2025-12-30 16:57:08,582 | INFO | document_ocr | [PAGE 83] confidence=1.0, images=0, tables=2
+2025-12-30 16:57:08,583 | INFO | document_ocr | [PAGE 83] Tables extracted
+2025-12-30 16:57:08,583 | INFO | document_ocr | [PAGE 83] OCR skipped
+2025-12-30 16:57:08,583 | INFO | document_ocr | [PAGE 84/112] Processing
+2025-12-30 16:57:08,623 | INFO | document_ocr | [PAGE 84] confidence=0.8, images=0, tables=1
+2025-12-30 16:57:08,623 | INFO | document_ocr | [PAGE 84] Tables extracted
+2025-12-30 16:57:08,623 | INFO | document_ocr | [PAGE 84] OCR skipped
+2025-12-30 16:57:08,623 | INFO | document_ocr | [PAGE 85/112] Processing
+2025-12-30 16:57:08,703 | INFO | document_ocr | [PAGE 85] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:08,704 | INFO | document_ocr | [PAGE 85] Tables extracted
+2025-12-30 16:57:08,704 | INFO | document_ocr | [PAGE 85] OCR skipped
+2025-12-30 16:57:08,704 | INFO | document_ocr | [PAGE 86/112] Processing
+2025-12-30 16:57:08,788 | INFO | document_ocr | [PAGE 86] confidence=1.0, images=0, tables=2
+2025-12-30 16:57:08,789 | INFO | document_ocr | [PAGE 86] Tables extracted
+2025-12-30 16:57:08,789 | INFO | document_ocr | [PAGE 86] OCR skipped
+2025-12-30 16:57:08,789 | INFO | document_ocr | [PAGE 87/112] Processing
+2025-12-30 16:57:08,874 | INFO | document_ocr | [PAGE 87] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:08,875 | INFO | document_ocr | [PAGE 87] Tables extracted
+2025-12-30 16:57:08,875 | INFO | document_ocr | [PAGE 87] OCR skipped
+2025-12-30 16:57:08,875 | INFO | document_ocr | [PAGE 88/112] Processing
+2025-12-30 16:57:08,968 | INFO | document_ocr | [PAGE 88] confidence=1.0, images=0, tables=5
+2025-12-30 16:57:08,968 | INFO | document_ocr | [PAGE 88] Tables extracted
+2025-12-30 16:57:08,969 | INFO | document_ocr | [PAGE 88] OCR skipped
+2025-12-30 16:57:08,969 | INFO | document_ocr | [PAGE 89/112] Processing
+2025-12-30 16:57:09,037 | INFO | document_ocr | [PAGE 89] confidence=1.0, images=1, tables=2
+2025-12-30 16:57:09,038 | INFO | document_ocr | [PAGE 89] Tables extracted
+2025-12-30 16:57:09,038 | INFO | document_ocr | [PAGE 89] OCR skipped
+2025-12-30 16:57:09,038 | INFO | document_ocr | [PAGE 90/112] Processing
+2025-12-30 16:57:09,100 | INFO | document_ocr | [PAGE 90] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:09,100 | INFO | document_ocr | [PAGE 90] Tables extracted
+2025-12-30 16:57:09,100 | INFO | document_ocr | [PAGE 90] OCR skipped
+2025-12-30 16:57:09,101 | INFO | document_ocr | [PAGE 91/112] Processing
+2025-12-30 16:57:09,171 | INFO | document_ocr | [PAGE 91] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:09,171 | INFO | document_ocr | [PAGE 91] Tables extracted
+2025-12-30 16:57:09,171 | INFO | document_ocr | [PAGE 91] OCR skipped
+2025-12-30 16:57:09,171 | INFO | document_ocr | [PAGE 92/112] Processing
+2025-12-30 16:57:09,189 | INFO | document_ocr | [PAGE 92] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:09,189 | WARNING | document_ocr | [PAGE 92] OCR triggered
+2025-12-30 16:57:10,674 | INFO | document_ocr | [OCR] Page 92: OCR text extracted
+2025-12-30 16:57:10,674 | INFO | document_ocr | [PAGE 93/112] Processing
+2025-12-30 16:57:10,694 | INFO | document_ocr | [PAGE 93] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:10,694 | WARNING | document_ocr | [PAGE 93] OCR triggered
+2025-12-30 16:57:11,954 | INFO | document_ocr | [OCR] Page 93: OCR text extracted
+2025-12-30 16:57:11,954 | INFO | document_ocr | [PAGE 94/112] Processing
+2025-12-30 16:57:12,019 | INFO | document_ocr | [PAGE 94] confidence=1.0, images=2, tables=1
+2025-12-30 16:57:12,020 | INFO | document_ocr | [PAGE 94] Tables extracted
+2025-12-30 16:57:12,020 | INFO | document_ocr | [PAGE 94] OCR skipped
+2025-12-30 16:57:12,020 | INFO | document_ocr | [PAGE 95/112] Processing
+2025-12-30 16:57:12,106 | INFO | document_ocr | [PAGE 95] confidence=1.0, images=0, tables=2
+2025-12-30 16:57:12,107 | INFO | document_ocr | [PAGE 95] Tables extracted
+2025-12-30 16:57:12,107 | INFO | document_ocr | [PAGE 95] OCR skipped
+2025-12-30 16:57:12,107 | INFO | document_ocr | [PAGE 96/112] Processing
+2025-12-30 16:57:12,173 | INFO | document_ocr | [PAGE 96] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:12,174 | INFO | document_ocr | [PAGE 96] Tables extracted
+2025-12-30 16:57:12,174 | INFO | document_ocr | [PAGE 96] OCR skipped
+2025-12-30 16:57:12,174 | INFO | document_ocr | [PAGE 97/112] Processing
+2025-12-30 16:57:12,235 | INFO | document_ocr | [PAGE 97] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:12,236 | INFO | document_ocr | [PAGE 97] Tables extracted
+2025-12-30 16:57:12,236 | INFO | document_ocr | [PAGE 97] OCR skipped
+2025-12-30 16:57:12,236 | INFO | document_ocr | [PAGE 98/112] Processing
+2025-12-30 16:57:12,241 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P622' is an invalid float value
+2025-12-30 16:57:12,246 | WARNING | pdfminer.pdfinterp | Cannot set gray non-stroke color because /'P627' is an invalid float value
+2025-12-30 16:57:12,250 | INFO | document_ocr | [PAGE 98] confidence=0.4, images=1, tables=0
+2025-12-30 16:57:12,250 | WARNING | document_ocr | [PAGE 98] OCR triggered
+2025-12-30 16:57:13,237 | INFO | document_ocr | [OCR] Page 98: OCR text extracted
+2025-12-30 16:57:13,237 | INFO | document_ocr | [PAGE 99/112] Processing
+2025-12-30 16:57:13,292 | INFO | document_ocr | [PAGE 99] confidence=1.0, images=2, tables=1
+2025-12-30 16:57:13,292 | INFO | document_ocr | [PAGE 99] Tables extracted
+2025-12-30 16:57:13,292 | INFO | document_ocr | [PAGE 99] OCR skipped
+2025-12-30 16:57:13,292 | INFO | document_ocr | [PAGE 100/112] Processing
+2025-12-30 16:57:13,391 | INFO | document_ocr | [PAGE 100] confidence=1.0, images=1, tables=2
+2025-12-30 16:57:13,391 | INFO | document_ocr | [PAGE 100] Tables extracted
+2025-12-30 16:57:13,392 | INFO | document_ocr | [PAGE 100] OCR skipped
+2025-12-30 16:57:13,392 | INFO | document_ocr | [PAGE 101/112] Processing
+2025-12-30 16:57:13,491 | INFO | document_ocr | [PAGE 101] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:13,491 | INFO | document_ocr | [PAGE 101] Tables extracted
+2025-12-30 16:57:13,491 | INFO | document_ocr | [PAGE 101] OCR skipped
+2025-12-30 16:57:13,492 | INFO | document_ocr | [PAGE 102/112] Processing
+2025-12-30 16:57:13,589 | INFO | document_ocr | [PAGE 102] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:13,589 | INFO | document_ocr | [PAGE 102] Tables extracted
+2025-12-30 16:57:13,590 | INFO | document_ocr | [PAGE 102] OCR skipped
+2025-12-30 16:57:13,590 | INFO | document_ocr | [PAGE 103/112] Processing
+2025-12-30 16:57:14,041 | INFO | document_ocr | [PAGE 103] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:14,042 | INFO | document_ocr | [PAGE 103] Tables extracted
+2025-12-30 16:57:14,042 | INFO | document_ocr | [PAGE 103] OCR skipped
+2025-12-30 16:57:14,042 | INFO | document_ocr | [PAGE 104/112] Processing
+2025-12-30 16:57:14,107 | INFO | document_ocr | [PAGE 104] confidence=1.0, images=4, tables=1
+2025-12-30 16:57:14,107 | INFO | document_ocr | [PAGE 104] Tables extracted
+2025-12-30 16:57:14,107 | INFO | document_ocr | [PAGE 104] OCR skipped
+2025-12-30 16:57:14,107 | INFO | document_ocr | [PAGE 105/112] Processing
+2025-12-30 16:57:14,141 | INFO | document_ocr | [PAGE 105] confidence=0.8, images=1, tables=1
+2025-12-30 16:57:14,142 | INFO | document_ocr | [PAGE 105] Tables extracted
+2025-12-30 16:57:14,142 | INFO | document_ocr | [PAGE 105] OCR skipped
+2025-12-30 16:57:14,142 | INFO | document_ocr | [PAGE 106/112] Processing
+2025-12-30 16:57:14,231 | INFO | document_ocr | [PAGE 106] confidence=1.0, images=0, tables=2
+2025-12-30 16:57:14,231 | INFO | document_ocr | [PAGE 106] Tables extracted
+2025-12-30 16:57:14,232 | INFO | document_ocr | [PAGE 106] OCR skipped
+2025-12-30 16:57:14,232 | INFO | document_ocr | [PAGE 107/112] Processing
+2025-12-30 16:57:14,298 | INFO | document_ocr | [PAGE 107] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:14,298 | INFO | document_ocr | [PAGE 107] Tables extracted
+2025-12-30 16:57:14,299 | INFO | document_ocr | [PAGE 107] OCR skipped
+2025-12-30 16:57:14,299 | INFO | document_ocr | [PAGE 108/112] Processing
+2025-12-30 16:57:14,387 | INFO | document_ocr | [PAGE 108] confidence=1.0, images=3, tables=2
+2025-12-30 16:57:14,387 | INFO | document_ocr | [PAGE 108] Tables extracted
+2025-12-30 16:57:14,387 | INFO | document_ocr | [PAGE 108] OCR skipped
+2025-12-30 16:57:14,387 | INFO | document_ocr | [PAGE 109/112] Processing
+2025-12-30 16:57:14,455 | INFO | document_ocr | [PAGE 109] confidence=1.0, images=0, tables=1
+2025-12-30 16:57:14,455 | INFO | document_ocr | [PAGE 109] Tables extracted
+2025-12-30 16:57:14,455 | INFO | document_ocr | [PAGE 109] OCR skipped
+2025-12-30 16:57:14,456 | INFO | document_ocr | [PAGE 110/112] Processing
+2025-12-30 16:57:14,661 | INFO | document_ocr | [PAGE 110] confidence=0.4, images=0, tables=0
+2025-12-30 16:57:14,662 | INFO | document_ocr | [PAGE 110] OCR skipped
+2025-12-30 16:57:14,662 | INFO | document_ocr | [PAGE 111/112] Processing
+2025-12-30 16:57:14,774 | INFO | document_ocr | [PAGE 111] confidence=1.0, images=0, tables=0
+2025-12-30 16:57:14,775 | INFO | document_ocr | [PAGE 111] OCR skipped
+2025-12-30 16:57:14,775 | INFO | document_ocr | [PAGE 112/112] Processing
+2025-12-30 16:57:14,855 | INFO | document_ocr | [PAGE 112] confidence=1.0, images=0, tables=0
+2025-12-30 16:57:14,855 | INFO | document_ocr | [PAGE 112] OCR skipped
+2025-12-30 16:57:19,529 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:20,660 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:21,381 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:22,403 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:23,831 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:25,078 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:26,189 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:27,207 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:28,538 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:29,767 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:31,099 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:32,548 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:33,558 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:33,968 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:34,583 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:35,808 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:36,837 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:38,163 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:39,290 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:41,031 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:42,466 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:43,826 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:45,333 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:46,869 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:48,307 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:49,736 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 16:57:50,127 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-12-30 18:00:06,133 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-12-30 18:02:11,563 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/customers
+2025-12-30 18:02:13,219 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/customers response_code=200
+2025-12-30 18:02:13,721 | INFO | stripe | message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2025-12-30 18:02:14,439 | INFO | stripe | message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2025-12-30 18:02:14,442 | INFO | billing | Checkout session created for user_id=13
+2025-12-30 18:02:50,944 | INFO | document_ocr | [PAGE 1/5] Processing
+2025-12-30 18:02:51,526 | INFO | document_ocr | [PAGE 1] confidence=1.0, images=1, tables=3
+2025-12-30 18:02:51,526 | INFO | document_ocr | [PAGE 1] Tables extracted
+2025-12-30 18:02:51,527 | INFO | document_ocr | [PAGE 1] OCR skipped
+2025-12-30 18:02:51,527 | INFO | document_ocr | [PAGE 2/5] Processing
+2025-12-30 18:02:51,661 | INFO | document_ocr | [PAGE 2] confidence=0.4, images=0, tables=1
+2025-12-30 18:02:51,661 | INFO | document_ocr | [PAGE 2] Tables extracted
+2025-12-30 18:02:51,662 | INFO | document_ocr | [PAGE 2] OCR skipped
+2025-12-30 18:02:51,663 | INFO | document_ocr | [PAGE 3/5] Processing
+2025-12-30 18:02:52,105 | INFO | document_ocr | [PAGE 3] confidence=1.0, images=0, tables=1
+2025-12-30 18:02:52,106 | INFO | document_ocr | [PAGE 3] Tables extracted
+2025-12-30 18:02:52,106 | INFO | document_ocr | [PAGE 3] OCR skipped
+2025-12-30 18:02:52,107 | INFO | document_ocr | [PAGE 4/5] Processing
+2025-12-30 18:02:52,316 | INFO | document_ocr | [PAGE 4] confidence=1.0, images=0, tables=1
+2025-12-30 18:02:52,317 | INFO | document_ocr | [PAGE 4] Tables extracted
+2025-12-30 18:02:52,317 | INFO | document_ocr | [PAGE 4] OCR skipped
+2025-12-30 18:02:52,318 | INFO | document_ocr | [PAGE 5/5] Processing
+2025-12-30 18:02:52,558 | INFO | document_ocr | [PAGE 5] confidence=1.0, images=0, tables=1
+2025-12-30 18:02:52,559 | INFO | document_ocr | [PAGE 5] Tables extracted
+2025-12-30 18:02:52,559 | INFO | document_ocr | [PAGE 5] OCR skipped
+2025-12-30 18:02:57,062 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 18:02:58,586 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 18:02:58,935 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-12-30 18:03:29,395 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2025-12-30 18:03:29,664 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2025-12-30 18:03:32,158 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-12-30 18:13:20,275 | ERROR | sqlalchemy.pool.impl.QueuePool | Exception during reset or similar
+Traceback (most recent call last):
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+    ~~~~~~~~~~~~^
+        pool,
+        ^^^^^
+    ...<2 lines>...
+        asyncio_safe=can_manipulate_connection,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "D:\DocumentAssistant\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 699, in do_rollback
+    dbapi_connection.rollback()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
