@@ -48,6 +48,9 @@ def extract_text_from_txt(file_bytes: bytes) -> str:
 
 # TEXT PREPROCESSING
 def preprocess_text(text: str) -> str:
+    # Remove null bytes
+    text = text.replace("\x00", "")
+
     # Normalize unicode characters
     text = unicodedata.normalize("NFKC", text)
 
