@@ -7,6 +7,12 @@ from fastapi import UploadFile
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
 from src.utils.models import models
+from pdf2image import convert_from_bytes
+from src.utils.ocr import analyze_text_confidence, ocr_page_image
+import logging
+
+logger = logging.getLogger("document_ocr")
+logger.setLevel(logging.INFO)
 
 # FILE TEXT EXTRACTION
 async def extract_text_from_file(file: UploadFile) -> str:
@@ -27,15 +33,80 @@ async def extract_text_from_file(file: UploadFile) -> str:
 
 
 def extract_text_from_pdf(file_bytes: bytes) -> str:
-    text = ""
+    final_text = []
 
     with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
-        for page in pdf.pages:
-            page_text = page.extract_text()
-            if page_text:
-                text += page_text + "\n"
+        total_pages = len(pdf.pages)
 
-    return preprocess_text(text)
+        for idx, page in enumerate(pdf.pages):
+            page_no = idx + 1
+            logger.info(f"[PAGE {page_no}/{total_pages}] Processing")
+
+            # ---------- Layer 1: Native Text ----------
+            native_text = page.extract_text() or ""
+            confidence = analyze_text_confidence(native_text)
+
+            image_count = len(page.images)
+            tables = page.extract_tables()
+
+            logger.info(
+                f"[PAGE {page_no}] "
+                f"confidence={confidence}, "
+                f"images={image_count}, "
+                f"tables={len(tables)}"
+            )
+
+            page_content = []
+
+            # ---------- Layer 2: Tables ----------
+            if tables:
+                for table in tables:
+                    table_text = "\n".join(
+                        [" | ".join(cell or "" for cell in row) for row in table if row]
+                    )
+                    page_content.append(
+                        f"\n--- TABLE Page {page_no} ---\n{table_text}"
+                    )
+                logger.info(f"[PAGE {page_no}] Tables extracted")
+
+            # ---------- OCR DECISION  ----------
+            run_ocr = (
+                confidence < 0.6 and
+                image_count > 0 and
+                not tables
+            )
+
+            if run_ocr:
+                logger.warning(f"[PAGE {page_no}] OCR triggered")
+
+                # Convert ONLY this page to image
+                page_image = convert_from_bytes(
+                    file_bytes,
+                    dpi=200,
+                    first_page=page_no,
+                    last_page=page_no,
+                    poppler_path=r"C:\poppler-25.12.0\Library\bin"
+                )[0]
+
+                ocr_text = ocr_page_image(page_image, page_no)
+                if ocr_text.strip():
+                    page_content.append(ocr_text)
+            else:
+                logger.info(f"[PAGE {page_no}] OCR skipped")
+
+            # ---------- Native Text ----------
+            if native_text.strip():
+                page_content.append(native_text)
+
+            if page_content:
+                final_text.append("\n".join(page_content))
+
+    combined = "\n\n".join(final_text)
+
+    if not combined.strip():
+        raise ValueError("PDF extraction failed")
+
+    return preprocess_text(combined)
 
 def extract_text_from_docx(file_bytes: bytes) -> str:
     doc = Document(io.BytesIO(file_bytes))
