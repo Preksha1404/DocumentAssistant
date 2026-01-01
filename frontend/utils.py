@@ -37,3 +37,16 @@ def api_get(path, token=None):
     except Exception as e:
         st.error(f"Request failed: {e}")
         return None
+    
+def require_access_or_redirect():
+    sub = api_get("/billing/me/subscription", token=st.session_state.token)
+    if not sub:
+        return False, None
+
+    status = sub.get("subscription_status")
+    if status not in ["trialing", "active"]:
+        st.warning("🔒 Access requires an active trial or subscription.")
+        st.markdown("👉 Go to **Home** to start your free trial.")
+        st.stop()
+
+    return True, sub

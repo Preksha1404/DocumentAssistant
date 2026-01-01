@@ -17,7 +17,7 @@ def require_active_subscription(
             # trial expired
             raise HTTPException(
                 status_code=402,
-                detail="Your free trial has ended. Please subscribe to continue."
+                detail="Your free trial has ended. Please upgrade to continue using AI features."
             )
 
     # ACTIVE SUBSCRIPTION
@@ -27,7 +27,7 @@ def require_active_subscription(
         else:
             raise HTTPException(
                 status_code=402,
-                detail="Your subscription is expired. Renew your plan."
+                detail="Your subscription has expired. Please renew your plan."
             )
 
     # EVERYTHING ELSE

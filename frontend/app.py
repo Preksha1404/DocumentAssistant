@@ -1,5 +1,6 @@
 import streamlit as st
-from utils import api_post, api_get
+from utils import api_post, api_get, require_access_or_redirect
+from datetime import datetime, timezone
 
 redirect_page = st.query_params.get("page")
 
@@ -49,7 +50,7 @@ if "active_document_id" not in st.session_state:
     st.session_state.active_document_id = None
 
 # ---------------- SIDEBAR NAV -----------------
-st.sidebar.title("📄 Document Assistant")
+st.sidebar.title("Document Assistant")
 
 if st.session_state.token:
     st.sidebar.success("Logged in")
@@ -61,7 +62,7 @@ else:
 
 page = st.sidebar.radio(
     "Navigation",
-    ["Login", "Register", "Upload Document", "RAG Chat", "AI Agent", "Billing"]
+    ["Home", "Login", "Register", "Upload Document", "RAG Chat", "AI Agent"]
 )
 
 # ------------------- LOGIN PAGE ---------------------
@@ -113,13 +114,99 @@ elif page == "Register":
         if res:
             st.success("Account created! You may login now.")
 
-# ------------------- UPLOAD DOC PAGE ----------------
+# ------------------- HOME PAGE ---------------------
+elif page == "Home":
+    st.header("🏠 Welcome to Document Assistant AI")
+
+    if not st.session_state.token:
+        st.info("Please login to start using the platform.")
+        st.markdown("""
+        **What you get**
+        - AI-powered document understanding
+        - Multimodal RAG (PDFs, tables, images)
+        - Intelligent AI Agent
+        """)
+        st.stop()
+
+    sub = api_get("/billing/me/subscription", token=st.session_state.token)
+
+    if not sub:
+        st.error("Unable to load plan details.")
+        st.stop()
+
+    status = sub.get("subscription_status")
+    trial_end = sub.get("trial_end")
+    period_end = sub.get("current_period_end")
+
+    now = datetime.now(timezone.utc)
+
+    st.markdown("---")
+
+    # ================= PLAN STATUS =================
+    if status == "trialing" and trial_end:
+        remaining = trial_end - now
+        hours_left = max(int(remaining.total_seconds() // 3600), 0)
+
+        st.success(
+            f"""
+            🧪 **1-Day Free Trial Active**  
+            You can try all premium features.  
+            ⏳ **{hours_left} hours remaining**
+            """
+        )
+
+    elif status == "active":
+        st.success(
+            """
+            ✅ **Subscription Active**  
+            You have full access to all features.
+            """
+        )
+
+    else:
+        st.warning(
+            """
+            🔒 **Subscription Required**  
+
+            To upload documents, chat with AI, and use the AI Agent,
+            you need an active subscription.
+
+            🎁 **Good news:** You get a **1-day free trial** when you upgrade.
+            """
+        )
+
+    st.markdown("---")
+
+    # ================= CTA =================
+    if status in ["trialing", "active"]:
+        st.button("✅ You Have Access", disabled=True)
+    else:
+        if st.button("🚀 Start Free Trial"):
+            res = api_post(
+                "/billing/create-checkout-session",
+                token=st.session_state.token
+            )
+            if res and "checkout_url" in res:
+                st.markdown(f"👉 [Proceed to Checkout]({res['checkout_url']})")
+
+    st.markdown(
+        """
+        **What’s included**
+        - Unlimited document uploads  
+        - RAG-based question answering  
+        - AI Agent reasoning  
+        - Image & table understanding  
+        """
+    )
+
 elif page == "Upload Document":
     st.header("📤 Upload Document")
 
     if not st.session_state.token:
         st.warning("Login required.")
         st.stop()
+
+    allowed, _ = require_access_or_redirect()
 
     file = st.file_uploader("Upload PDF / TXT / DOCX", type=["pdf", "txt", "docx"])
 
@@ -132,7 +219,6 @@ elif page == "Upload Document":
             if res:
                 st.success("Uploaded successfully!")
                 st.session_state.active_document_id = res.get("document_id")
-                st.info(f"Active document ID set to {st.session_state.active_document_id}")
 
 # ------------------- RAG CHAT PAGE ------------------
 elif page == "RAG Chat":
@@ -141,6 +227,8 @@ elif page == "RAG Chat":
     if not st.session_state.token:
         st.warning("Login required.")
         st.stop()
+
+    allowed, _ = require_access_or_redirect()
 
     # Chat history
     for msg in st.session_state.chat_history:
@@ -166,6 +254,8 @@ elif page == "AI Agent":
     if not st.session_state.token:
         st.warning("Login required.")
         st.stop()
+
+    allowed, _ = require_access_or_redirect()
 
     # Render agent chat history
     for msg in st.session_state.agent_chat_history:
@@ -199,54 +289,3 @@ elif page == "AI Agent":
                 "text": answer
             })
             st.chat_message("assistant").write(answer)
-            
-
-# ------------------- BILLING PAGE -------------------
-elif page == "Billing":
-    st.header("💳 Subscription / Billing")
-
-    if not st.session_state.token:
-        st.warning("Login required.")
-        st.stop()
-
-    # Fetch user subscription info
-    sub = api_get("/billing/me/subscription", token=st.session_state.token)
-
-    if not sub:
-        st.error("Failed to load subscription details")
-        st.stop()
-
-    status = sub.get("subscription_status")
-    trial_end = sub.get("trial_end")
-    period_end = sub.get("current_period_end")
-
-    # Display status
-    st.info(f"**Status:** {status}")
-
-    # Convert trial_end to readable format
-    if trial_end:
-        st.write(f"**Trial Ends:** {trial_end}")
-
-    if period_end:
-        st.write(f"**Billing Period Ends:** {period_end}")
-
-    st.markdown("---")
-
-    status = sub.get("subscription_status")
-
-    if status == "trialing":
-        st.info("🕒 You are on a free trial.")
-    elif status == "active":
-        st.success("✅ Subscription Active")
-    elif status in ["past_due", "none"]:
-        st.error("⛔ Trial expired. Please subscribe to continue.")
-
-    st.subheader("Upgrade to Continue Usage")
-    if status in ["trialing", "active"]:
-        st.button("Subscribe Now", disabled=True)
-    else:
-        if st.button("Subscribe Now"):
-            res = api_post("/billing/create-checkout-session", token=st.session_state.token)
-            if res and "checkout_url" in res:
-                st.markdown(f"[👉 Click Here to Pay]({res['checkout_url']})")
-    st.markdown("---")
